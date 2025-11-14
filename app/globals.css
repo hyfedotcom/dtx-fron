@@ -68,7 +68,7 @@ h1 {
 }
 
 .h2-large {
-  @apply font-heading text-[32px] md:text-[60px] leading-10 md:leading-[70px] font-medium;
+  @apply font-heading text-[32px] md:text-[50px] leading-10 md:leading-[70px] font-medium;
 }
 
 .h3-medium {

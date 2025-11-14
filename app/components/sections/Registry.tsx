@@ -13,7 +13,7 @@ export function renderBlock(block: BlockUI, key: number) {
   switch (block?.type) {
     case "hero":
       return <Hero key={key} data={block} />;
-    case "why-resolve-dtx":
+    case "feature-cards-rights":
       return <WhyResolve key={key} data={block} />;
     case "accordion":
       return <Accordion key={key} data={block} />;

@@ -6,7 +6,7 @@ export function WhyResolve({ data }: { data: WhyResolveUI }) {
   const { cards } = data;
 
   return (
-    <section>
+    <section id={data.type}>
       <div className="container space-y-25">
         <ContentContainer
           data={data}

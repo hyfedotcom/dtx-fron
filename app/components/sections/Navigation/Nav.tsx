@@ -7,7 +7,7 @@ export function Nav({
   mt,
 }: {
   data: NavigationUI;
-  mt: MotionValue<number>;
+  mt?: MotionValue<number>;
 }) {
   const { nav_link } = data;
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -41,11 +41,11 @@ export function Nav({
     return () => ro.disconnect();
   }, [active]);
 
-  const backgroundColor = useTransform(
-    mt,
-    [35, 10],
-    ["rgb(255 255 255)", "rgb(247 247 249)"]
-  );
+  // const backgroundColor = useTransform(
+  //   mt,
+  //   [35, 10],
+  //   ["rgb(255 255 255)", "rgb(247 247 249)"]
+  // );
 
   return (
     <nav className="mx-auto w-max z-100 ">
@@ -55,7 +55,7 @@ export function Nav({
         //            shadow-[0_0_20px_rgb(0_0_0/0.2)]"
         className="relative  pointer-events-auto flex items-center  rounded-full p-2 
                   "
-        style={{ backgroundColor }}
+        // style={{ backgroundColor }}
       >
         {/* бегунок под активной ссылкой */}
         <span

@@ -5,7 +5,7 @@ import { mapButtons, mapCards, mapParagraphs, txt } from "../sanitize";
 
 export function mapWhyResolve(raw: StrapiWhyResolve): WhyResolveUI {
   return {
-    type: "why-resolve-dtx",
+    type: "feature-cards-rights",
     heading: txt(raw.heading),
     subHeading: txt(raw.sub_heading),
     content: mapParagraphs(raw.content),

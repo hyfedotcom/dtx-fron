@@ -17,13 +17,15 @@ export function Hero({ data }: { data: HeroUI }) {
   return (
     <main className="w-full p-0 md:p-10 bg-gray-50">
       <div
-        className={`bg-primary-800 pt-35 lg:pt-48 ${
+        className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url
             ? "lg:h-[1390px] "
             : "h-auto flex items-center justify-center pb-48"
         } overflow-hidden rounded-b-[20px] lg:rounded-[40px] space-y-10 lg:space-y-32`}
+        style={{ background: "var(--shadow-brand)" }}
       >
-        <div>
+        {/* CONTENT  */}
+        <div className="relative z-2 px-4">
           {sub_heading && (
             <div className="mx-auto w-max mb-10">
               <SubHeading>{sub_heading}</SubHeading>
@@ -46,7 +48,10 @@ export function Hero({ data }: { data: HeroUI }) {
             <div className="mx-auto flex flex-wrap justify-center gap-5 mt-10">
               {ctas.map((c, i) => {
                 return (
-                  <div key={i} className="w-full md:w-max shadow-button-hero">
+                  <div
+                    key={i}
+                    className="w-full md:w-max shadow-button-hero rounded-full"
+                  >
                     {" "}
                     <Button data={c} />
                   </div>
@@ -58,10 +63,10 @@ export function Hero({ data }: { data: HeroUI }) {
 
         {/* DESKTOP   */}
         {image_sreens_desktop?.url && (
-          <div className="hidden lg:flex justify-center pr-30">
+          <div className="relative z-2 hidden lg:flex justify-center pr-30">
             {/*  WATCH  */}
             {image_sreens_desktop?.url && (
-              <div className="glass max-w-[270px] h-max py-20 px-10  border-t-4 border-white/40 translate-y-[30%] translate-x-20 z-1">
+              <div className="glass max-w-[270px] h-max py-20 px-10  border-t-4 border-white/40 translate-y-[40%] translate-x-20 z-1">
                 <Image
                   src={image_watch_desktop?.url ?? ""}
                   alt={image_watch_desktop?.alt ?? "screens of resolve dtx app"}
@@ -89,7 +94,7 @@ export function Hero({ data }: { data: HeroUI }) {
 
         {/* MOBILE */}
         {image_mobile?.url && (
-          <div className=" glass w-full mx-auto pt-3 border-t-4 border-white/40 translate-y-[10%] z-1">
+          <div className="relative glass w-full mx-auto pt-3 border-t-4 border-white/40 translate-y-[10%] z-2">
             <Image
               src={image_mobile?.url ?? ""}
               alt={image_mobile?.alt ?? "screens of resolve dtx app"}
@@ -99,6 +104,21 @@ export function Hero({ data }: { data: HeroUI }) {
             ></Image>
           </div>
         )}
+
+        {/* BG LAYOUT */}
+        <div className="absolute inset-0 w-full h-full bg-[#F9FCFF]/10 backdrop-blur-[80px] z-1"></div>
+
+        {/* VIDEO */}
+        <video
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          src="/video/hero-dtx.mp4"
+          preload="metadata"
+          autoPlay
+          muted
+          playsInline
+          loop
+          disableRemotePlayback
+        ></video>
       </div>
     </main>
   );

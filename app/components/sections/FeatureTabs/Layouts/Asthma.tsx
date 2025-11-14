@@ -196,23 +196,23 @@ const coughTriggers = [
 
 const thirdBox = [
   {
-    z: 2,
+    z: "z-2",
     mt: "mt-[60px]",
     scale: "scale-60",
-    week: 4,
+    week: 2,
     date: "Tuesday, Dec 10",
     status: "No difficulty ",
   },
   {
-    z: 3,
+    z: "z-3",
     mt: "mt-[40px]",
     scale: "scale-75",
-    week: 4,
+    week: 3,
     date: "Tuesday, Dec 10",
     status: "No difficulty ",
   },
   {
-    z: 4,
+    z: "z-4",
     mt: "mt-[20px]",
     scale: "scale-90",
     week: 4,
@@ -220,7 +220,7 @@ const thirdBox = [
     status: "No difficulty ",
   },
   {
-    z: 5,
+    z: "z-5",
     mt: "mt-[-20px]",
     scale: "scale-100",
     week: 5,
@@ -232,7 +232,7 @@ const thirdBox = [
 export function Asthma({ card }: { card: CardUI }) {
   return (
     <div
-      className="grid grid-cols-2 grid-rows-2 w-full gap-4 h-auto"
+      className="grid  grid-cols-1 min-[1000px]:grid-cols-2 grid-rows-2 w-full gap-4 h-auto"
       style={{ gridTemplateColumns: "minmax(0, 310px) minmax(0, 380px)" }}
     >
       {/* FIRST BOX */}
@@ -268,14 +268,17 @@ export function Asthma({ card }: { card: CardUI }) {
       </div>
 
       {/* SECOND BOX */}
-      <div className="bg-white flex flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
+      <div className="flex bg-white  flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
         <p className="text-[14px] md:body-medium text-left font-bold! pb-4 pt-1">
           Cough frequency over time
         </p>
         <div className="flex flex-wrap  gap-2.5">
           {coughTriggers.map((el, i) => (
             <span
-              className={`${el.title === "Eating dry / crumbly food" && "max-[1200px]:hidden"}   text-[12px] h-max md:text-[14px] font-medium w-max rounded-full py-2 px-4 flex items-center gap-2 bg-white shadow-classic overflow-hidden`}
+              className={`${
+                el.title === "Eating dry / crumbly food" &&
+                "max-[1200px]:hidden"
+              }  f text-[12px] h-max md:text-[14px] font-medium w-max rounded-full py-2 px-4 flex gap-2 bg-white shadow-classic overflow-hidden`}
               key={i}
             >
               {el.svg} {el.title}
@@ -285,24 +288,24 @@ export function Asthma({ card }: { card: CardUI }) {
       </div>
 
       {/* THIRD BOX */}
-      <div className="relative rounded-[14px] p-3 border border-gray-200 bg-primary-50  overflow-hidden">
+      <div className="hidden min-[1000px]:flex relative rounded-[14px] p-3 border border-gray-200 bg-primary-50 overflow-hidden">
         {thirdBox.map((el, i) => (
           <div
-            className={`absolute ${el.mt} ${el.scale} -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 z-${el.z} `}
+            className={`absolute ${el.mt} ${el.scale} -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${el.z} `}
             key={i}
           >
             <div className="flex justify-between  items-center w-full bg-white rounded-[18px] p-4.5 shadow-classic min-w-[250px] max-w-[287px]  overflow-hidden">
               <div className="flex gap-1 flex-col justify-start text-left">
                 <span
                   className={`${
-                    el.z < 3 ? "text-white" : "text-[#3AA19A]"
+                    el.week < 3 ? "text-white" : "text-[#3AA19A]"
                   } uppercase font-bold text-[13px] h-[17px]`}
                 >
-                  week{el.week}
+                  week {el.week}
                 </span>
                 <span
                   className={`${
-                    el.z < 3 ? "text-white" : "text-gray-500"
+                    el.week < 3 ? "text-white" : "text-gray-500"
                   } text-[13px] `}
                 >
                   {el.date}
@@ -310,7 +313,7 @@ export function Asthma({ card }: { card: CardUI }) {
               </div>
               <span
                 className={`${
-                  el.z < 3 ? "text-white" : "text-primary-800"
+                  el.week < 3 ? "text-white" : "text-primary-800"
                 } text-[18px] font-bold h-[23px]`}
               >
                 {el.status}
@@ -321,7 +324,7 @@ export function Asthma({ card }: { card: CardUI }) {
       </div>
 
       {/* FOURTH BOX */}
-      <div className="relative w-full h-full rounded-[14px] overflow-hidden">
+      <div className="hidden min-[1000px]:flex relative w-full h-full rounded-[14px] overflow-hidden">
         <Image
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}

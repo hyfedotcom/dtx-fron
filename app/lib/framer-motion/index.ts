@@ -8,6 +8,7 @@ import {
   useMotionTemplate,
   useReducedMotion,
   animate,
+  AnimatePresence,
 } from "framer-motion";
 
 export {
@@ -20,4 +21,5 @@ export {
   useMotionTemplate,
   useReducedMotion,
   animate,
+  AnimatePresence,
 };

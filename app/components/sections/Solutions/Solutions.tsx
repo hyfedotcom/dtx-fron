@@ -4,7 +4,7 @@ import { Card } from "./Card";
 
 export function Solutions({ data }: { data: SolutionsUI }) {
   return (
-    <section className="bg-gray-50">
+    <section id={data.type} className="bg-gray-50">
       <div className="container space-y-10 md:space-y-15">
         <ContentContainer data={data} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

@@ -1,5 +1,6 @@
 import { ButtonUI } from "@types-ui";
 import { Button } from "../Button/Button";
+import { SubHeading } from "../SubHeading/SubHeading";
 
 type Props = {
   heading?: string;
@@ -13,18 +14,31 @@ export function ContentContainer({
   classContainer,
   classParagraph,
   classHeading,
-}: {
+  classTextContiner = "space-y-5 md:space-y-6`",
+}: // layout,
+{
   classContainer?: string;
   classHeading?: string;
   classParagraph?: string;
+  classTextContiner?: string;
   data: Props;
+  // layout?: "horizontal" | "vertical";
 }) {
   const { content, ctas, heading, sub_heading } = data;
   const headingSize = (heading ?? "").length > 50 ? "h2-medium" : "h2-large";
-  const paragraphSize = (heading ?? "").length < 100 ? "body-medium" : "h4";
+  const paragraphSize = (content ?? "").length < 100 ? "body-medium" : "h4";
+
   return (
     <div className={`${classContainer}`}>
-      <div className="space-y-5 md:space-y-6">
+      <div className={`${classTextContiner} `}>
+        {sub_heading && (
+          <SubHeading
+            divClass="bg-[#87CAE7]/10 border-[#87CAE7]/100 hidden md:block"
+            pClass="text-black/60 text-[12px] text-[14px]"
+          >
+            {sub_heading}
+          </SubHeading>
+        )}
         {heading && (
           <h2
             className={`text-heading text-balance ${classHeading} ${headingSize} `}

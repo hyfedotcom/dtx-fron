@@ -28,7 +28,7 @@ export function Card({
     <div
       className={`${
         activeIndex === index ? "z-1 opacity-100" : "z-0 opacity-0"
-      } absolute  inset-0 flex flex-col  gap-5 h-max min-[1000px]:flex-row`}
+      } absolute inset-0 flex   gap-5 h-max min-[1000px]:flex-row`}
     >
       {/* Левая часть с текстом */}
       <div className="w-full md:w-1/2  p-6 flex flex-col justify-center gap-4 bg-white rounded-[20px] text-left">

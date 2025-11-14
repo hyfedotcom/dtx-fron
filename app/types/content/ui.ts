@@ -16,7 +16,7 @@ export type HeroUI = {
 };
 
 export type WhyResolveUI = {
-  type: "why-resolve-dtx";
+  type: "feature-cards-rights";
   heading?: string;
   subHeading?: string;
   content?: ContentUI[];
