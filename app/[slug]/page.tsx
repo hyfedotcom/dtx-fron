@@ -9,23 +9,7 @@ import { Metadata } from "next";
 type Params = { slug: string };
 
 // 👇 Это важно: SSG stage
-export async function generateStaticParams() {
-  const routes = await getAllRoutes();
-  return routes.map((r) => ({
-    slug: r.slug,
-  }));
-}
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Params;
-}): Promise<Metadata> {
-  const entry = await getPage(params.slug);
-  const seo = mapSeo(entry?.seo);
-  console.log(seo)
-  return getSeoMetadata(seo);
-}
 
 export default async function Page({ params }: { params: Promise<Params> }) {
   const { slug } = await params;

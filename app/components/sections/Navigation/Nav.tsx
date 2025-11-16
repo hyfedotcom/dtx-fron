@@ -29,7 +29,7 @@ export function Nav({
   // меряем при монтировании и при смене active
   useLayoutEffect(() => {
     measure(active);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [active, nav_link.length]);
 
   // держим в синхроне при ресайзе/изменении шрифтов/контента

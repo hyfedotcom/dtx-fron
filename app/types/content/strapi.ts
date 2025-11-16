@@ -167,3 +167,9 @@ export interface Seo {
   // JSON-LD / structured data
   structured_data?: string | null;
 }
+
+export type PageProps = {
+  params: {
+    slug: string;
+  };
+};
