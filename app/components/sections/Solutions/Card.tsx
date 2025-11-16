@@ -11,7 +11,7 @@ import { useRef } from "react";
 
 export function Card({ data }: { data: CardLinkUI }) {
   const { link, gradientEnd, gradientStart, heading, image, paragraph } = data;
-  const isMobile = useViewportSize().width <= 768;
+  const isMobile = useViewportSize().width <= 767;
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(
     ref,

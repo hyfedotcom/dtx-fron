@@ -1,3 +1,4 @@
+import { useViewportSize } from "@hooks/useViewportSize";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 
@@ -101,13 +102,11 @@ const secondBox = {
 };
 
 export function LungCancer({ card }: { card: CardUI }) {
+  const { width } = useViewportSize();
   return (
-    <div
-      className="grid grid-cols-2 grid-rows-2 w-full gap-4 relative"
-      style={{ gridTemplateColumns: "minmax(0, 345px) minmax(0, 345px)" }}
-    >
+    <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 w-full gap-4 relative">
       {/* FIRST BOX */}
-      <div className="relative h-[258px] bg-white rounded-[14px] border border-gray-200 overflow-hidden">
+      <div className="max-[768px]:hidden relative h-[258px] bg-white rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="body-medium  font-bold! mx-auto pt-4">
           Cough Worsening During Radiotherapy
         </p>
@@ -139,7 +138,7 @@ export function LungCancer({ card }: { card: CardUI }) {
       </div>
 
       {/* SECOND BOX */}
-      <div className="absolute right-0 w-[49%] bg-white flex  flex-col justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
+      <div className="min-[768px]:absolute right-0 w-full md:w-[49%] bg-white flex  flex-col justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
         <p className="body-medium flex items-center justify-center gap-2.5 text-left font-bold! pb-4 pt-1">
           {secondBox.heading} {secondBox.svgHeading}
         </p>
@@ -168,7 +167,7 @@ export function LungCancer({ card }: { card: CardUI }) {
 
       {/* THIRD BOX */}
       <div
-        className="relative w-full h-[258px] rounded-[14px] overflow-hidden"
+        className="max-[768px]:hidden  relative w-full h-[258px] rounded-[14px] overflow-hidden"
         style={{
           gridColumn: "1",
           gridRow: "2",
@@ -186,20 +185,29 @@ export function LungCancer({ card }: { card: CardUI }) {
 
       {/* FOURTH BOX */}
       <div
-        className="relative   w-full h-[145px] rounded-[14px] bg-white border border-gray-200"
-        style={{
-          gridColumn: "2",
-          gridRow: "2",
-          justifySelf: "end",
-          alignSelf: "end",
-        }}
+        className="relative  w-full h-[145px] rounded-[14px] bg-white border border-gray-200"
+        style={
+          width > 768
+            ? {
+                gridColumn: "2",
+                gridRow: "2",
+                justifySelf: "end",
+                alignSelf: "end",
+              }
+            : {
+                gridColumn: "1",
+                gridRow: "2",
+                justifySelf: "start",
+                alignSelf: "start",
+              }
+        }
       >
-        <div className="relativew-full h-[145px] overflow-hidden">
+        <div className="relative w-full h-[145px] overflow-hidden">
           <Image
             src="/feature-tabs/ring.png"
             alt={"vector"}
             fill
-            className="object-cover"
+            className="object-cover "
           />
         </div>
         <Image
@@ -207,7 +215,7 @@ export function LungCancer({ card }: { card: CardUI }) {
           alt={card?.image?.alt || card.heading || "seo-image"}
           width={241}
           height={258}
-          className="absolute -translate-x-1/3 left-1/2 -translate-y-[200px] "
+          className="absolute -translate-x-[50%] left-1/2 -translate-y-[78%] "
         />
       </div>
     </div>

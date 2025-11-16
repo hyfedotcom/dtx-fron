@@ -19,9 +19,9 @@ export function Hero({ data }: { data: HeroUI }) {
       <div
         className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url
-            ? "lg:h-[1390px] "
+            ? "h-auto lg:h-[1390px] "
             : "h-auto flex items-center justify-center pb-48"
-        } overflow-hidden rounded-b-[20px] lg:rounded-[40px] space-y-10 lg:space-y-32`}
+        } overflow-hidden rounded-b-[20px] lg:rounded-[40px] space-y-5 md:space-y-10 lg:space-y-32`}
         style={{ background: "var(--shadow-brand)" }}
       >
         {/* CONTENT  */}
@@ -61,40 +61,33 @@ export function Hero({ data }: { data: HeroUI }) {
           )}
         </div>
 
-        {/* DESKTOP   */}
+        {/*  WATCH */}
         {image_sreens_desktop?.url && (
-          <div className="relative z-2 hidden lg:flex justify-center pr-30">
-            {/*  WATCH  */}
-            {image_sreens_desktop?.url && (
-              <div className="glass max-w-[270px] h-max py-20 px-10  border-t-4 border-white/40 translate-y-[40%] translate-x-20 z-1">
-                <Image
-                  src={image_watch_desktop?.url ?? ""}
-                  alt={image_watch_desktop?.alt ?? "screens of resolve dtx app"}
-                  width={image_watch_desktop?.width}
-                  height={image_watch_desktop?.height}
-                ></Image>
-              </div>
-            )}
+          <div className="hidden lg:block  absolute -translate-[200%] xl:-translate-x-[220%] left-1/2  glass max-w-[270px] h-max py-20 px-10  border-t-4 border-white/40 translate-y-[40%]  z-3">
+            <Image
+              src={image_watch_desktop?.url ?? ""}
+              alt={image_watch_desktop?.alt ?? "screens of resolve dtx app"}
+              width={image_watch_desktop?.width}
+              height={image_watch_desktop?.height}
+            ></Image>
+          </div>
+        )}
 
-            {/*  SCREENS */}
-            {image_sreens_desktop?.url && (
-              <div className="glass max-w-[1017px] h-max py-10 px-20 border-t-4 border-white/40">
-                <Image
-                  src={image_sreens_desktop?.url ?? ""}
-                  alt={
-                    image_sreens_desktop?.alt ?? "screens of resolve dtx app"
-                  }
-                  width={image_sreens_desktop?.width}
-                  height={image_sreens_desktop?.height}
-                ></Image>
-              </div>
-            )}
+        {/*  SCREENS */}
+        {image_sreens_desktop?.url && (
+          <div className="hidden lg:block  glass absolute w-[1000px] translate-x-[-48%] xl:translate-x-[-40%] left-1/2  max-w-[1017px]  py-10 px-20  border-t-4  border-white/40 z-2">
+            <Image
+              src={image_sreens_desktop?.url ?? ""}
+              alt={image_sreens_desktop?.alt ?? "screens of resolve dtx app"}
+              width={image_sreens_desktop?.width}
+              height={image_sreens_desktop?.height}
+            ></Image>
           </div>
         )}
 
         {/* MOBILE */}
         {image_mobile?.url && (
-          <div className="relative glass w-full mx-auto pt-3 border-t-4 border-white/40 translate-y-[10%] z-2">
+          <div className="md:w-[90%]  lg:hidden relative glass  mx-auto pt-3 border-t-4 border-white/40 translate-y-[15%] z-2">
             <Image
               src={image_mobile?.url ?? ""}
               alt={image_mobile?.alt ?? "screens of resolve dtx app"}
@@ -106,7 +99,7 @@ export function Hero({ data }: { data: HeroUI }) {
         )}
 
         {/* BG LAYOUT */}
-        <div className="absolute inset-0 w-full h-full bg-[#F9FCFF]/10 backdrop-blur-[80px] z-1"></div>
+        <div className=" absolute inset-0 w-full h-full bg-[#F9FCFF]/10 backdrop-blur-[80px] z-1"></div>
 
         {/* VIDEO */}
         <video

@@ -125,8 +125,6 @@ export type StrapiFeatureTabs = {
   cards: StrapiCard[] | StrapiCard | null;
 };
 
-
-
 export type StrapiSection =
   | StrapiHero
   | StrapiWhyResolve
@@ -151,18 +149,14 @@ export type StrapiCollection<T> = { data: T[] };
 export interface Seo {
   id?: number;
 
-  // Управление индексированием
-  is_indexable: boolean;
+
 
   // Основные мета-поля
   meta_title?: string;
   meta_description?: string;
 
   // OG и визуальные данные
-  meta_image?: {
-    url?: string;
-    alt?: string;
-  };
+  meta_image?: MediaUI;
 
   // Robots, canonical и keywords
   meta_robots?: string;

@@ -9,8 +9,12 @@ export async function getGlobal() {
     "populate[footer][populate][column_links][populate][nav_link]": "*",
     "populate[header][populate][cta]": "*",
     "populate[header][populate][nav_links]": "*",
-    "populate[global_setting][populate]": "*",
+    "populate[global_setting][populate][logo_footer][populate]": "*",
+    "populate[global_setting][populate][logo_header][populate]": "*",
+    "populate[global_setting][populate][social_media][populate]": "*",
   }).toString();
+
+
 
   const json = await strapiFetch<StrapiCollection<StrapiGlobal>>(
     `/api/globals?${query}`

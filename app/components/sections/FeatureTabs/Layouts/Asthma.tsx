@@ -1,3 +1,6 @@
+"use client";
+
+import { useViewportSize } from "@hooks/useViewportSize";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 
@@ -230,29 +233,28 @@ const thirdBox = [
 ];
 
 export function Asthma({ card }: { card: CardUI }) {
+
   return (
-    <div
-      className="grid  grid-cols-1 min-[1000px]:grid-cols-2 grid-rows-2 w-full gap-4 h-auto"
-      style={{ gridTemplateColumns: "minmax(0, 310px) minmax(0, 380px)" }}
-    >
+    <div className="grid max-[500px]:grid-cols-1  max-[500px]:grid-rows-2 grid-rows-2 grid-cols-2 w-full gap-4 h-auto">
+      {" "}
       {/* FIRST BOX */}
-      <div className="relative bg-white rounded-[14px] border border-gray-200 overflow-hidden">
+      <div className="relative hidden min-[500px]:flex  flex-col justify-between bg-white rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="text-[14px] md:body-medium  font-bold! mx-auto pt-4">
           Cough frequency over time
         </p>
         <svg
-          className="absolute bottom-0 left-0 right-0"
-          viewBox="0 0 329 266"
+          className="w-full h-auto"
+          viewBox="0 0 329 189"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g clipPath="url(#clip0_932_12711)">
+          <g clipPath="url(#clip0_973_13233)">
             <path
-              d="M-103.234 146.786C-112.598 173.739 -126.523 181.093 -132.314 181.401L-140 352.575L348.809 374.523L401.5 257C394.349 261.702 367.713 170.313 355.5 220C326.726 273.579 292.094 212.481 284.716 199.465L284.547 199.167C277.545 186.82 264.385 182.469 256.057 183.975C247.73 185.481 222.198 210.618 217.104 187.077C205.104 148.5 204.104 157.077 194.105 139.577C185.105 132.577 180.395 131.32 173.885 119.747C167.375 108.174 147.684 80.9691 131.328 112.572C114.971 144.175 98.8805 158.117 84.6999 113.863C70.5193 69.608 53.0959 74.0899 45.7912 88.0505C38.4864 102.011 22.2101 101.243 -5.32082 107.553C-19.2298 112.745 -6.7985 171.714 -22.6371 203.047C-43.0811 243.491 -52.6711 206.587 -59.2766 161.92C-65.8821 117.254 -91.5285 113.094 -103.234 146.786Z"
+              d="M-103.234 69.7859C-112.598 96.7393 -126.523 104.093 -132.314 104.401L-140 275.575L348.809 297.523L401.5 180C394.349 184.702 367.713 93.3127 355.5 143C326.726 196.579 292.094 135.481 284.716 122.465L284.547 122.167C277.545 109.82 264.385 105.469 256.057 106.975C247.73 108.481 222.198 133.618 217.104 110.077C205.104 71.5 204.104 80.0767 194.105 62.5767C185.105 55.5767 180.395 54.3199 173.885 42.7471C167.375 31.1744 147.684 3.96912 131.328 35.572C114.971 67.175 98.8805 81.1171 84.6999 36.8625C70.5193 -7.392 53.0959 -2.91009 45.7912 11.0505C38.4864 25.0111 22.2101 24.2434 -5.32082 30.5534C-19.2298 35.7454 -6.7985 94.7138 -22.6371 126.047C-43.0811 166.491 -52.6711 129.587 -59.2766 84.9202C-65.8821 40.2537 -91.5285 36.094 -103.234 69.7859Z"
               fill="#DBE9FD"
             />
             <path
-              d="M-132.202 181.152C-126.437 180.844 -112.576 173.491 -103.251 146.55C-91.5935 112.874 -66.0672 117.026 -59.5008 161.668C-52.9343 206.31 -43.3958 243.193 -23.0394 202.767C-2.68313 162.34 -38.2494 118.466 -21.8331 108.684C-5.2583 98.8073 33.7291 112.363 46.2919 88.2602C53.5653 74.3055 69.7082 69.38 83.8147 113.609C97.9211 157.838 113.94 143.9 130.226 112.31C146.512 80.7209 166.106 107.908 172.584 119.474C179.061 131.039 184.063 132.077 191.563 138.577C204.404 149.705 210.998 163.548 216.063 187.077C221.129 210.605 246.073 185.16 254.362 183.653C262.65 182.146 275.749 186.493 282.716 198.832C289.684 211.171 303.063 228 317.063 238C358.67 267.72 351.227 118.206 358.346 113.505"
+              d="M-132.203 104.152C-126.438 103.844 -112.577 96.4912 -103.252 69.55C-91.5945 35.8735 -66.0682 40.0263 -59.5018 84.6682C-52.9353 129.31 -43.3967 166.193 -23.0404 125.767C-2.6841 85.3402 -38.2504 41.4658 -21.8341 31.6838C-5.25928 21.8073 33.7281 35.3633 46.2909 11.2602C53.5643 -2.69452 69.7073 -7.61998 83.8137 36.6089C97.9201 80.8377 113.939 66.8999 130.225 35.3104C146.511 3.72088 166.105 30.9083 172.583 42.4738C179.06 54.0393 184.062 55.0767 191.563 61.5767C204.403 72.7054 210.997 86.5482 216.062 110.077C221.128 133.605 246.072 108.16 254.361 106.653C262.649 105.146 275.748 109.493 282.715 121.832C289.683 134.171 303.062 151 317.062 161C358.669 190.72 351.226 41.206 358.345 36.5052"
               stroke="#5896EB"
               strokeWidth="3"
               strokeLinecap="round"
@@ -260,15 +262,14 @@ export function Asthma({ card }: { card: CardUI }) {
             />
           </g>
           <defs>
-            <clipPath id="clip0_932_12711">
-              <rect width="329" height="266" rx="14" fill="white" />
+            <clipPath id="clip0_973_13233">
+              <rect width="329" height="189" fill="white" />
             </clipPath>
           </defs>
         </svg>
       </div>
-
       {/* SECOND BOX */}
-      <div className="flex bg-white  flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
+      <div className="flex bg-white flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
         <p className="text-[14px] md:body-medium text-left font-bold! pb-4 pt-1">
           Cough frequency over time
         </p>
@@ -286,9 +287,8 @@ export function Asthma({ card }: { card: CardUI }) {
           ))}
         </div>
       </div>
-
       {/* THIRD BOX */}
-      <div className="hidden min-[1000px]:flex relative rounded-[14px] p-3 border border-gray-200 bg-primary-50 overflow-hidden">
+      <div className="min-h-[230px] min-[1000px]:flex relative rounded-[14px] p-3 border border-gray-200 bg-primary-50 overflow-hidden">
         {thirdBox.map((el, i) => (
           <div
             className={`absolute ${el.mt} ${el.scale} -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 ${el.z} `}
@@ -322,9 +322,8 @@ export function Asthma({ card }: { card: CardUI }) {
           </div>
         ))}
       </div>
-
       {/* FOURTH BOX */}
-      <div className="hidden min-[1000px]:flex relative w-full h-full rounded-[14px] overflow-hidden">
+      <div className="hidden min-[500px]:flex relative w-full h-full rounded-[14px] overflow-hidden">
         <Image
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}

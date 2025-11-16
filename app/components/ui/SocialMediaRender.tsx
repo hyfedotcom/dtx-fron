@@ -8,7 +8,7 @@ const youTube = (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="32" height="32" rx="16" fill="#00AD99" />
+    <rect width="32" height="32" rx="16" fill="#2e7be0" />
     <mask
       id="mask0_737_8389"
       style={{ maskType: "luminance" }}
@@ -44,7 +44,7 @@ const x = (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="32" height="32" rx="16" fill="#00AD99" />
+    <rect width="32" height="32" rx="16" fill="#2e7be0" />
     <mask
       id="mask0_737_8394"
       style={{ maskType: "luminance" }}
@@ -72,7 +72,7 @@ const facebook = (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="32" height="32" rx="16" fill="#00AD99" />
+    <rect width="32" height="32" rx="16" fill="#2e7be0" />
     <path
       d="M18 17.5H20.5L21.5 13.5H18V11.5C18 10.47 18 9.5 20 9.5H21.5V6.14C21.174 6.097 19.943 6 18.643 6C15.928 6 14 7.657 14 10.7V13.5H11V17.5H14V26H18V17.5Z"
       fill="white"
@@ -87,7 +87,7 @@ const linkedin = (
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <rect width="32" height="32" rx="16" fill="#00AD99" />
+    <rect width="32" height="32" rx="16" fill="#2e7be0" />
     <path
       d="M8.98487 11.197C10.1933 11.197 11.1729 10.2174 11.1729 9.00898C11.1729 7.80058 10.1933 6.82098 8.98487 6.82098C7.77648 6.82098 6.79688 7.80058 6.79688 9.00898C6.79688 10.2174 7.77648 11.197 8.98487 11.197Z"
       fill="white"

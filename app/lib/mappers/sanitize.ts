@@ -1,11 +1,13 @@
 import type {
   column_links,
   LinksUI,
+  SocialMedia,
   StrapiButton,
   StrapiCard,
   StrapiCardLink,
   StrapiContent,
   StrapiMedia,
+  StrapiSocialMedia,
   StrapLinks,
 } from "@types-content";
 import type { ContentUI, CardUI, MediaUI, CardLinkUI } from "@types-ui";
@@ -87,7 +89,6 @@ export function mapCardsLink(
 export function mapLinks(
   v: StrapLinks | StrapLinks[] | null | undefined
 ): LinksUI[] {
-  console.log(v);
   return asArray(v).map((c) => ({
     label: txt(c.label),
     link: txt(c.link),
@@ -103,5 +104,14 @@ export function mapColumnLinks(
       label: txt(c.label),
       link: txt(c.link),
     })),
+  }));
+}
+
+export function mapSocialMedia(
+  v: StrapiSocialMedia[] | StrapiSocialMedia | null | undefined
+): SocialMedia[] {
+  return asArray(v).map((s) => ({
+    link: normalizeUrl(s.link),
+    target: s.target,
   }));
 }

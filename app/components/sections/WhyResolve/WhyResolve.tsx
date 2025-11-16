@@ -7,7 +7,7 @@ export function WhyResolve({ data }: { data: WhyResolveUI }) {
 
   return (
     <section id={data.type}>
-      <div className="container space-y-25">
+      <div className="container space-y-25 mt-10 md:mt-0">
         <ContentContainer
           data={data}
           classContainer="max-w-[1000px] flex items-center justify-center flex-col mx-auto text-center"

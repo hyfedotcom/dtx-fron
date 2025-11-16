@@ -2,7 +2,7 @@
 
 import { SocialMediaRender } from "@/ui/SocialMediaRender";
 import { useViewportSize } from "@hooks/useViewportSize";
-import { HeaderUI } from "@types-content";
+import { HeaderUI, SocialMedia } from "@types-content";
 import { MediaUI } from "@types-ui";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,11 +10,17 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "@motion";
 
-export function Header({ data, logo }: { data: HeaderUI; logo: MediaUI }) {
+export function Header({
+  data,
+  logo,
+  social_media,
+}: {
+  data: HeaderUI;
+  logo: MediaUI;
+  social_media: SocialMedia[];
+}) {
   const [IsTop, setIsTop] = useState(false);
-
   const [open, setOpen] = useState(false);
-
   const { width } = useViewportSize();
   const path = usePathname();
 
@@ -31,7 +37,7 @@ export function Header({ data, logo }: { data: HeaderUI; logo: MediaUI }) {
   return (
     <header
       className={`w-full fixed ${
-        IsTop && !open ? "mt-4" : "md: lg:pt-15"
+        IsTop && width > 758 ? "mt-4" : "md: lg:pt-15"
       } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1000`}
     >
       <div
@@ -90,7 +96,7 @@ export function Header({ data, logo }: { data: HeaderUI; logo: MediaUI }) {
         {data.cta.map((b, i) => (
           <a
             href={b.link}
-            className={`hidden lg:block bg-${b.color} px-5 py-3 rounded-full text-white font-semibold leading-[26px] text-[18px]`}
+            className={`hidden lg:block bg-${b.color} hover:opacity-80 px-5 py-3 rounded-full text-white font-semibold leading-[26px] text-[18px]`}
             key={i}
           >
             {b.label}
@@ -131,13 +137,13 @@ export function Header({ data, logo }: { data: HeaderUI; logo: MediaUI }) {
                   </a>
                 ))}
 
-                {/* {social_media && social_media.length > 0 && (
-                <div className="flex gap-5 mt-auto">
-                  {social_media.map((media, index) => (
-                    <SocialMediaRender data={media} key={index} />
-                  ))}
-                </div>
-              )} */}
+                {social_media && social_media.length > 0 && (
+                  <div className="flex gap-5 mt-auto">
+                    {social_media.map((media, index) => (
+                      <SocialMediaRender data={media} key={index} />
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           )}

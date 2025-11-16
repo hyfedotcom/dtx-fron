@@ -5,6 +5,7 @@ const firsBox = {
   heading: "Quality of live score ",
   svgHeading: (
     <svg
+      className="min-w-6 min-h-6"
       width="24"
       height="24"
       viewBox="0 0 24 24"
@@ -103,13 +104,10 @@ const secondBox = {
 
 export function COPD({ card }: { card: CardUI }) {
   return (
-    <div
-      className="grid grid-cols-2 grid-rows-2 w-full gap-4"
-      style={{ gridTemplateColumns: "minmax(0, 310px) minmax(0, 380px)" }}
-    >
+    <div className="grid max-[500px]:grid-cols-1 grid-cols-2 grid-rows-2 w-full gap-4">
       {/* FIRST BOX */}
       <div className="relative flex flex-col justify-center items-center gap-5  p-4 bg-primary-50 rounded-[14px] border border-gray-200 overflow-hidden">
-        <p className="body-medium flex gap-3  font-bold! mx-auto pt-4">
+        <p className="body-medium flex items-center gap-3  font-bold! mx-auto pt-4">
           {firsBox.heading} {firsBox.svgHeading}
         </p>
         {firsBox.tabs.map((el, i) => (
@@ -121,7 +119,8 @@ export function COPD({ card }: { card: CardUI }) {
           </span>
         ))}
       </div>{" "}
-      <div className="relative row-span-2 w-full h-full rounded-[14px] overflow-hidden">
+      {/* SECOND BOX */}
+      <div className="max-[500px]:hidden relative row-span-2 w-full h-full rounded-[14px] overflow-hidden">
         <Image
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}
@@ -129,7 +128,7 @@ export function COPD({ card }: { card: CardUI }) {
           className="object-cover"
         />
       </div>
-      {/* SECOND BOX */}
+      {/* THIRD BOX */}
       <div className="relative flex flex-col justify-center items-center gap-5 p-4 bg-primary-50 rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="body-medium flex gap-3 font-bold! mx-auto pt-4">
           {secondBox.heading} {secondBox.svgHeading}

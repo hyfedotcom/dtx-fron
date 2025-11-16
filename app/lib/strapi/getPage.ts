@@ -33,6 +33,7 @@ export async function getPage(slug: string, site?: string) {
     "filters[slug][$eq]": slug,
     "populate[sections][populate]": "*",
     ...buildPopulateParams(POPULATE_KEYS),
+    "populate[seo][populate]": "*"
   };
 
   const json = await strapiFetch<StrapiCollection<StrapiPageEntry>>(

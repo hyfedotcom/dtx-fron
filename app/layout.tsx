@@ -6,6 +6,8 @@ import { Header } from "@/layouts/Header";
 import { mapGlobalSetting } from "./lib/mappers/layouts/globalSetting";
 import { Footer } from "@/layouts/Footer";
 import { mapFooter } from "./lib/mappers/layouts/mapFooter";
+import { getPage } from "./lib/strapi/getPage";
+import { getSeoMetadata } from "@/sections/Seo/getSeoMetadata";
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans",
@@ -28,11 +30,15 @@ export default async function RootLayout({
   const header = mapHeader(global.header);
   const footer = mapFooter(global.footer);
   const setting = mapGlobalSetting(global.global_setting);
-  console.log(footer);
+
   return (
     <html lang="en">
       <body className={`${notoSansJp.variable} ${inter.variable} antialiased`}>
-        <Header data={header} logo={setting.logo_header} />
+        <Header
+          data={header}
+          logo={setting.logo_header}
+          social_media={setting.social_media}
+        />
         {children}
         <Footer data={footer} global={setting} />
       </body>

@@ -12,7 +12,6 @@ export function FeatureTabsLogic({ cards }: { cards: CardUI[] }) {
       <Tabs cards={cards} onClick={setActiveIndex} activeIndex={activeIndex} />
 
       <div className="relative w-full h-full">
-        <div className="w-full h-[140vh] md:h-[50vh]"></div>
         {cards.map((c, i) => (
           <Card activeIndex={activeIndex} index={i} key={i} card={c} />
         ))}

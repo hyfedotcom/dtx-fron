@@ -22,7 +22,7 @@ export function Navigation({
   children?: ReactNode;
 }) {
   const { content, heading } = data;
-  const { ref: triggerRef, visible } = useScrollTrigger(10, 0.4);
+  const { ref: triggerRef, visible } = useScrollTrigger(20, 0.9);
 
   // const { scrollYProgress } = useScroll({
   //   target: ref,
@@ -56,14 +56,14 @@ export function Navigation({
 
   return (
     <div className="bg-gray-50">
-      <div className="relative flex flex-col gap-20 pt-[100px] md:pt-[150px]">
+      <div className="relative flex flex-col gap-20  md:py-[150px]">
         {/* <div className=" top-15 h-full w-full z-10">
           {" "}
           {/*sticky 
           <NavigationContainer data={data} />
         </div> */}
 
-        <div ref={triggerRef} className="h-[200vh]">
+        <div ref={triggerRef} className=" py-[200px] px-5">
           <div className="sticky top-[40%] space-y-4 md:space-y-4">
             <AnimatedIcon visible={visible} />
             {heading && (
@@ -81,7 +81,7 @@ export function Navigation({
                 <p className="body-large" key={i}>
                   <WordReveal
                     words={p.paragraph.split(" ")}
-                    className="text-balance text-center w-full mx-auto flex gap-1.5 items-center justify-center"
+                    className="text-balance flex-wrap text-center w-full mx-auto flex gap-1.5 items-center justify-center"
                     isVisible={visible}
                   />
                 </p>

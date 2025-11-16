@@ -47,17 +47,23 @@ export type FooterUI = {
 export type StrapiGlobalSetting = {
   logo_footer: StrapiMedia | null;
   logo_header: StrapiMedia | null;
+  social_media?: StrapiSocialMedia[] 
 };
 
 export type GlobalSetting = {
   logo_footer: MediaUI;
   logo_header: MediaUI;
-  social_media?: SocialMedia[];
+  social_media: SocialMedia[];
 };
 
 export type Target = "x" | "facebook" | "youtube" | "linkedin" | "insagram";
 
 export interface SocialMedia {
-  target: Target;
-  link: string;
+  target?: Target;
+  link?: string;
+}
+
+export interface StrapiSocialMedia {
+  target?: Target;
+  link?: string;
 }

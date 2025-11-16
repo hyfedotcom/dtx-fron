@@ -27,8 +27,8 @@ export function Card({
   return (
     <div
       className={`${
-        activeIndex === index ? "z-1 opacity-100" : "z-0 opacity-0"
-      } absolute inset-0 flex   gap-5 h-max min-[1000px]:flex-row`}
+        activeIndex === index ? "relative z-10 opacity-100" : "z-0 opacity-0 absolute"
+      }  inset-0 flex   gap-5 h-max flex-col md:flex-row`}
     >
       {/* Левая часть с текстом */}
       <div className="w-full md:w-1/2  p-6 flex flex-col justify-center gap-4 bg-white rounded-[20px] text-left">
@@ -42,7 +42,7 @@ export function Card({
         )}
       </div>
 
-      <div className="md:1/3 lg:w-1/2 h-max">
+      <div className="w-full md:w-1/2 h-max">
         <Layout card={card} />
       </div>
     </div>

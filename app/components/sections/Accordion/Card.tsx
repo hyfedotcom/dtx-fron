@@ -13,8 +13,8 @@ export function Card({
   return (
     <div
       className={`${
-        isActive ? "bg-primary-100 space-y-2 " : "bg-gray-50 md:bg-transparent "
-      } p-4 md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden`}
+        isActive ? "bg-primary-100 space-y-2 p-4" : "bg-white md:bg-transparent py-4 px-4"
+      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden`}
       onClick={onClick}
     >
       <div
@@ -25,7 +25,7 @@ export function Card({
         {card.icon.url && (
           <div
             className={`${
-              isActive ? "bg-gray-50 " : "bg-white"
+              isActive ? "bg-gray-50 " : "bg-gray-50 md:bg-white"
             } w-[52px] h-[52px] rounded-full flex items-center justify-center`}
           >
             <Image
