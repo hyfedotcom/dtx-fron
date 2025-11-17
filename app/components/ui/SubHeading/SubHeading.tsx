@@ -1,7 +1,7 @@
 export function SubHeading({
   children,
-  pClass = "text-white body-large",
-  divClass = "bg-[#F5F5F5]/40 border-white/40",
+  pClass = "text-white ",
+  divClass = "bg-[#F5F5F5]/40 border-white/0",
 }: {
   children: string;
   divClass?: string;
@@ -9,7 +9,7 @@ export function SubHeading({
 }) {
   return (
     <div
-      className={`py-4 px-6 ${divClass}   border uppercase rounded-3xl backdrop-blur-[20px] w-max`}
+      className={`px-6 py-4 max-[360px]:text-[14px]  md:text-[16px] tracking-[0.8px] font-bold  max-[360px]:leading-4 max-[500px]:leading-4 lg:leading-4 ${divClass}   border uppercase rounded-3xl backdrop-blur-[20px] w-max`}
     >
       <p className={` font-bold! ${pClass} leading-[100%]!`}>{children}</p>
     </div>

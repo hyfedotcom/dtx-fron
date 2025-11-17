@@ -14,7 +14,8 @@ export async function getGlobal() {
   }).toString();
 
   const json = await strapiFetch<StrapiCollection<StrapiGlobal>>(
-    `/api/globals?${query}`
+    `/api/globals?${query}`,
+    "global"
   );
 
   return json.data[0];

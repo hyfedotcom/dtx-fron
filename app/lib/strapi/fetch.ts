@@ -18,11 +18,10 @@ export async function strapiFetch<T>(
     headers: { Authorization: `Bearer ${TOKEN}` },
     next: {
       tags: tag ? [tag] : [],
-      revalidate: 60,
+      revalidate: false,
     },
   });
 
- 
   if (!res.ok) {
     const text = await res.text();
     console.error("❌ Strapi error:", res.status, res.statusText, text);

@@ -1,0 +1,33 @@
+import { revalidateTag } from "next/cache";
+import { NextResponse } from "next/server";
+
+export async function POST(req: Request) {
+  const body = await req.json();
+  const model = body.model;
+  const entry = body.entry;
+
+  console.log("Oncoming webhook:", body);
+
+  try {
+    if (model === "global") {
+      console.log(`🌍 Global content updated for site: global`);
+      revalidateTag(`global`);
+      return NextResponse.json({ type: "global" });
+    }
+
+    if (model === "page") {
+      const pageSlug = entry.slug;
+      console.log(`Page updated ${pageSlug}`);
+
+      revalidateTag(pageSlug);
+      return NextResponse.json({
+        type: "Page",
+        slug: pageSlug,
+      });
+    }
+    return NextResponse.json({ message: "Unhandled model", model });
+  } catch (err) {
+    console.error("❌ Webhook error:", err);
+    return NextResponse.json({ error: "Revalidation failde" }, { status: 500 });
+  }
+}

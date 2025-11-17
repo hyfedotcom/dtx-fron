@@ -40,14 +40,14 @@ export function Header({
         (IsTop && width > 758) ||
         path === "/privacy-policy" ||
         path === "/cookie"
-            ? "mt-4"
+            ? "mt-0"
           : "md: lg:pt-15"
       } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1000`}
     >
       <div
         className={`${
-          IsTop ? "  max-w-[1440px]" : " max-w-full"
-        } flex bg-[#87CAE7]/20 border-[#87CAE7]  justify-between items-center p-3 mx-auto  transition-all duration-500 backdrop-blur-[20px] rounded-[40px]`}
+          IsTop ? "  max-w-[1440px] " : " max-w-full"
+        } flex bg-[#87CAE7]/20 border-[#87CAE7]  justify-between items-center p-3 mx-auto  transition-all duration-500 backdrop-blur-[20px] rounded-t-[40px] rounded-b-[40px]`}
       >
         <Link href="/" className="flex items-center z-2">
           <Image
