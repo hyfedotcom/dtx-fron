@@ -13,7 +13,6 @@ export function Footer({
 }) {
   const { column_links, copyright, policy_links } = data;
   const { logo_footer, social_media = [] } = global;
- 
 
   return (
     <footer className=" bg-white w-full  z-3 relative pt-20">

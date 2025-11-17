@@ -1,6 +1,5 @@
 "use client";
 
-import { useViewportSize } from "@hooks/useViewportSize";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 

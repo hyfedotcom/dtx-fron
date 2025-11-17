@@ -16,7 +16,7 @@ export async function getPage(slug: string, site?: string) {
     "sections.feature-scroll-showcase": ["content", "ctas", "cards"],
     "sections.solutions": ["ctas", "content", "cards"],
     "sections.cta": ["ctas", "content"],
-    "sections.navigation": ["content", "nav_to_sections"],
+    "sections.navigation": ["content"],
     "sections.feature-tabs": ["content", "ctas", "cards"],
   };
 
@@ -31,9 +31,11 @@ export async function getPage(slug: string, site?: string) {
 
   const params = {
     "filters[slug][$eq]": slug,
-    "populate[sections][populate]": "*",
+
+    "populate[sections][on][sections.rich-text-block][populate][populate]":
+      "*",
     ...buildPopulateParams(POPULATE_KEYS),
-    "populate[seo][populate]": "*"
+    "populate[seo][populate]": "*",
   };
 
   const json = await strapiFetch<StrapiCollection<StrapiPageEntry>>(

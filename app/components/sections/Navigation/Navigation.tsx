@@ -1,15 +1,15 @@
 "use client";
 
 import { NavigationUI } from "@types-content";
-import { NavigationContainer } from "./NavigationContainer";
-import { ReactNode, useEffect, useRef, useState } from "react";
-import {
-  useScroll,
-  useTransform,
-  useSpring,
-  useMotionTemplate,
-  useReducedMotion,
-} from "@motion";
+// import { NavigationContainer } from "./NavigationContainer";
+import { ReactNode} from "react";
+// import {
+//   useScroll,
+//   useTransform,
+//   useSpring,
+//   useMotionTemplate,
+//   useReducedMotion,
+// } from "@motion";
 import { WordReveal } from "@/ui/Animations/Animations";
 import { useScrollTrigger } from "@hooks/useVisibilityTrigger";
 import { AnimatedIcon } from "./AnimatedIcon";

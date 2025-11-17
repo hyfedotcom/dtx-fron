@@ -6,6 +6,7 @@ import type {
   StrapiFeatureTabs,
   StrapiHeader,
   StrapiNavigation,
+  StrapiRichText,
   StrapiSolutions,
 } from "@types-content";
 import type {
@@ -22,7 +23,7 @@ import { mapSolutions } from "./sections/solutions";
 import { mapCta } from "./sections/cta";
 import { mapNavigation } from "./sections/navigations";
 import { mapFeatureTabs } from "./sections/featureTabs";
-import { mapHeader } from "./layouts/header";
+import { mapRichText } from "./sections/richText";
 
 type Mapper<T> = (raw: T) => BlockUI | null;
 
@@ -37,5 +38,5 @@ export const registry = {
   "sections.cta": mapCta as Mapper<StrapiCta>,
   "sections.navigation": mapNavigation as Mapper<StrapiNavigation>,
   "sections.feature-tabs": mapFeatureTabs as Mapper<StrapiFeatureTabs>,
-  // "global.header": mapHeader as Mapper<StrapiHeader>,
+  "sections.rich-text-block": mapRichText as Mapper<StrapiRichText>,
 };

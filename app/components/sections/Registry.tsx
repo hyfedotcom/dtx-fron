@@ -8,6 +8,7 @@ import { Solutions } from "./Solutions/Solutions";
 import { Cta } from "./Cta/Cta";
 import { Navigation } from "./Navigation/Navigation";
 import { FeatureTabs } from "./FeatureTabs/FeatureTabs";
+import PrivacyPolicy from "./PrivacyPolicy/RichText";
 
 export function renderBlock(block: BlockUI, key: number) {
   switch (block?.type) {
@@ -29,6 +30,8 @@ export function renderBlock(block: BlockUI, key: number) {
       return <Navigation key={key} data={block} />;
     case "feature-tabs":
       return <FeatureTabs key={key} data={block} />;
+    case "rich-text":
+      return <PrivacyPolicy key={key} data={block} />;
   }
 }
 

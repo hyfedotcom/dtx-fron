@@ -1,6 +1,6 @@
 import { StrapiGlobalSetting } from "@types-content";
 import { GlobalSetting } from "@types-content";
-import { mapLinks, mapMedia, mapSocialMedia } from "../sanitize";
+import {  mapMedia, mapSocialMedia } from "../sanitize";
 
 export function mapGlobalSetting(raw: StrapiGlobalSetting): GlobalSetting {
   return {

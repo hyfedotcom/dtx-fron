@@ -83,6 +83,11 @@ export type FeatureTabsUI = {
   cards: CardUI[];
 };
 
+export type RichTextUI = {
+  type: "rich-text";
+  rich_text: string;
+};
+
 export type BlockUI =
   | HeroUI
   | WhyResolveUI
@@ -93,7 +98,7 @@ export type BlockUI =
   | CtaUI
   | NavigationUI
   | FeatureTabsUI
-  // | HeaderUI
+  | RichTextUI
   | null;
 
 export interface PageUI {

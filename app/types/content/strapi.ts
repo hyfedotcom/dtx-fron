@@ -125,6 +125,11 @@ export type StrapiFeatureTabs = {
   cards: StrapiCard[] | StrapiCard | null;
 };
 
+export type StrapiRichText = {
+  __component: "sections.rich-text-block";
+  rich_text_block?: string | null;
+};
+
 export type StrapiSection =
   | StrapiHero
   | StrapiWhyResolve
@@ -134,6 +139,7 @@ export type StrapiSection =
   | StrapiSolutions
   | StrapiCta
   | StrapiFeatureTabs
+  | StrapiRichText
   | StrapiNavigation;
 
 export interface StrapiPageEntry {
@@ -148,9 +154,6 @@ export type StrapiCollection<T> = { data: T[] };
 
 export interface Seo {
   id?: number;
-
-
-
   // Основные мета-поля
   meta_title?: string;
   meta_description?: string;

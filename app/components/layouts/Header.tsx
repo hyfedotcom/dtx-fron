@@ -37,7 +37,11 @@ export function Header({
   return (
     <header
       className={`w-full fixed ${
-        IsTop && width > 758 ? "mt-4" : "md: lg:pt-15"
+        (IsTop && width > 758) ||
+        path === "/privacy-policy" ||
+        path === "/cookie"
+            ? "mt-4"
+          : "md: lg:pt-15"
       } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1000`}
     >
       <div
@@ -61,10 +65,12 @@ export function Header({
         >
           {data.links.map((l, i) => (
             <Link
-              href={l.link}
+              href={`/home/${l.link}`}
               key={i}
               className={`${
-                IsTop ? "text-black " : "text-white"
+                IsTop || path === "/privacy-policy" || path === "/cookie"
+                  ? "text-black "
+                  : "text-white"
               } transition-colors duration-200 hover:text-primary-400`}
             >
               {l.label}

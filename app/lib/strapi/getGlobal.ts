@@ -4,8 +4,7 @@ import { StrapiGlobal } from "app/types/content/global";
 
 export async function getGlobal() {
   const query = new URLSearchParams({
-    "populate[footer]": "*",
-    "populate[footer][populate][policy_links]": "*",
+    "populate[footer][populate][policy_links][populate]": "*",
     "populate[footer][populate][column_links][populate][nav_link]": "*",
     "populate[header][populate][cta]": "*",
     "populate[header][populate][nav_links]": "*",
@@ -13,8 +12,6 @@ export async function getGlobal() {
     "populate[global_setting][populate][logo_header][populate]": "*",
     "populate[global_setting][populate][social_media][populate]": "*",
   }).toString();
-
-
 
   const json = await strapiFetch<StrapiCollection<StrapiGlobal>>(
     `/api/globals?${query}`
