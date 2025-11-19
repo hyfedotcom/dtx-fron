@@ -42,7 +42,7 @@ export function ContentContainer({
       <div className={`${classTextContiner} `}>
         {subHeading && (
           <SubHeading
-            divClass={`bg-[#87CAE7]/10 border-[#87CAE7]/100 w-max mx-auto ${
+            divClass={`bg-[#87CAE7]/10 border-[#87CAE7]/100 w-max ${
               subHeading?.length > 25 && "hidden"
             } md:block`}
             pClass="text-black/60 text-[12px] text-[14px]"

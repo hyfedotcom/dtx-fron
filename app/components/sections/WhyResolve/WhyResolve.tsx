@@ -11,6 +11,7 @@ export function WhyResolve({ data }: { data: WhyResolveUI }) {
         <ContentContainer
           data={data}
           classContainer="max-w-[1000px] flex items-center justify-center flex-col mx-auto text-center"
+          classTextContiner="flex flex-col items-center justifly-center space-y-5"
         ></ContentContainer>
         {cards.length != 0 && (
           <div className="space-y-25">
