@@ -10,7 +10,7 @@ export async function getPage(slug: string, site?: string) {
       "image_watch_desktop",
       "image_sreens_desktop",
     ],
-    "sections.why-resolve-dtx": ["content", "cta", "cards"],
+    "sections.why-resolve-dtx": ["content", "ctas", "cards"],
     "sections.accordion": ["content", "ctas", "cards"],
     "sections.feature-sticky": ["content", "ctas", "cards"],
     "sections.feature-scroll-showcase": ["content", "ctas", "cards"],
@@ -42,6 +42,7 @@ export async function getPage(slug: string, site?: string) {
     slug,
     params
   );
-  console.log(slug);
+
   return json.data?.[0] ?? null;
 }
+

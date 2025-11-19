@@ -1,3 +1,4 @@
+import { SmartText } from "@/ui/ContentContainer/SmartText";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 
@@ -13,8 +14,10 @@ export function Card({
   return (
     <div
       className={`${
-        isActive ? "bg-primary-100 space-y-2 p-4" : "bg-white md:bg-transparent py-4 px-4"
-      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden`}
+        isActive
+          ? "bg-primary-100 space-y-2 p-4"
+          : "bg-gray-50 md:bg-transparent py-4 px-4"
+      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden hover:bg-gray-50 transform-color duration-150`}
       onClick={onClick}
     >
       <div
@@ -33,6 +36,7 @@ export function Card({
               alt={card.icon.alt ?? "icon"}
               width={card.icon.width}
               height={card.icon.height}
+              sizes="(min-width: 768) 50vh, 90vh"
             ></Image>
           </div>
         )}
@@ -44,7 +48,7 @@ export function Card({
             isActive ? "opacity-100 max-h-80" : "opacity-0 max-h-0"
           } body-small duration-600 transition-all`}
         >
-          {card.paragraph}
+          <SmartText text={card.paragraph} />
         </p>
       </div>
       {card.image.url && (

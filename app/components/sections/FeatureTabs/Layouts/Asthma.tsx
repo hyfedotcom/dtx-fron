@@ -232,7 +232,6 @@ const thirdBox = [
 ];
 
 export function Asthma({ card }: { card: CardUI }) {
-
   return (
     <div className="grid max-[500px]:grid-cols-1  max-[500px]:grid-rows-2 grid-rows-2 grid-cols-2 w-full gap-4 h-auto">
       {" "}
@@ -327,6 +326,7 @@ export function Asthma({ card }: { card: CardUI }) {
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}
           fill
+          sizes="(min-width: 768px) 20vh, 90vh"
           className="object-cover"
         />
       </div>

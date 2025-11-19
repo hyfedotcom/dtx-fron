@@ -1,10 +1,11 @@
 import { ButtonUI } from "@types-ui";
 import { Button } from "../Button/Button";
 import { SubHeading } from "../SubHeading/SubHeading";
+import { SmartText } from "./SmartText";
 
 type Props = {
   heading?: string;
-  sub_heading?: string;
+  subHeading?: string;
   content?: { paragraph: string }[];
   ctas?: ButtonUI[];
 };
@@ -24,19 +25,29 @@ export function ContentContainer({
   data: Props;
   // layout?: "horizontal" | "vertical";
 }) {
-  const { content, ctas, heading, sub_heading } = data;
+  const { content, ctas, heading, subHeading } = data;
   const headingSize = (heading ?? "").length > 50 ? "h2-medium" : "h2-large";
   const paragraphSize = (content ?? "").length < 100 ? "body-medium" : "h4";
+
+  if (
+    content?.length === 0 &&
+    ctas?.length === 0 &&
+    heading === "" &&
+    subHeading === ""
+  )
+    return null;
 
   return (
     <div className={`${classContainer}`}>
       <div className={`${classTextContiner} `}>
-        {sub_heading && (
+        {subHeading && (
           <SubHeading
-            divClass="bg-[#87CAE7]/10 border-[#87CAE7]/100 hidden md:block"
+            divClass={`bg-[#87CAE7]/10 border-[#87CAE7]/100 w-max mx-auto ${
+              subHeading?.length > 25 && "hidden"
+            } md:block`}
             pClass="text-black/60 text-[12px] text-[14px]"
           >
-            {sub_heading}
+            {subHeading}
           </SubHeading>
         )}
         {heading && (
@@ -53,7 +64,7 @@ export function ContentContainer({
                 className={`${paragraphSize} ${classParagraph} text-balance`}
                 key={i}
               >
-                {p.paragraph}
+                <SmartText text={p.paragraph} />
               </p>
             ))}
           </div>

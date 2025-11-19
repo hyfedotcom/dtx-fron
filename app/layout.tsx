@@ -28,7 +28,6 @@ export default async function RootLayout({
   const header = mapHeader(global.header);
   const footer = mapFooter(global.footer);
   const setting = mapGlobalSetting(global.global_setting);
-  console.log(global.footer)
 
   return (
     <html lang="en">

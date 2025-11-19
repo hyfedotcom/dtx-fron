@@ -4,6 +4,7 @@ import { COPD } from "./Layouts/COPD";
 import { ILD } from "./Layouts/ILD";
 import { LungCancer } from "./Layouts/LungCancer";
 import { Default } from "./Layouts/Default";
+import { SmartText } from "@/ui/ContentContainer/SmartText";
 
 const layouts: Record<string, React.ComponentType<{ card: CardUI }>> = {
   "layout-asthma": Asthma,
@@ -27,7 +28,9 @@ export function Card({
   return (
     <div
       className={`${
-        activeIndex === index ? "relative z-10 opacity-100" : "z-0 opacity-0 absolute"
+        activeIndex === index
+          ? "relative z-10 opacity-100"
+          : "z-0 opacity-0 absolute"
       }  inset-0 flex   gap-5 h-max flex-col md:flex-row`}
     >
       {/* Левая часть с текстом */}
@@ -38,7 +41,10 @@ export function Card({
           </h3>
         )}
         {card.paragraph && (
-          <p className="text-gray-700 leading-relaxed">{card.paragraph}</p>
+          <p className="text-gray-700 leading-relaxed">
+            {" "}
+            <SmartText text={card.paragraph} />
+          </p>
         )}
       </div>
 

@@ -8,8 +8,8 @@ export type HeroUI = {
   type: "hero";
   heading?: string;
   sub_heading?: string;
-  content?: ContentUI[];
-  ctas?: ButtonUI[];
+  content: ContentUI[];
+  ctas: ButtonUI[];
   image_sreens_desktop: MediaUI | null;
   image_watch_desktop: MediaUI | null;
   image_mobile: MediaUI | null;

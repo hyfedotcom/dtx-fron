@@ -9,7 +9,6 @@ export function ImageContainer({
   cards: CardUI[];
   activIndex: number;
 }) {
-  console.log(cards);
   return (
     <div className="hidden md:block w-full max-[1300px]:w-1/2 max-w-[820px] h-[440px] relative rounded-[20px] overflow-hidden">
       {cards.length > 0 &&
@@ -25,7 +24,7 @@ export function ImageContainer({
                 src={c.image.url}
                 alt={c.image.alt ?? "image"}
                 fill
-                sizes=" 70vw, 50vw"
+                sizes="(min-width: 768px) 50vh, 90vh"
                 className="object-cover"
               ></Image>
             )}

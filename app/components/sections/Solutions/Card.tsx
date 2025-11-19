@@ -38,17 +38,17 @@ export function Card({ data }: { data: CardLinkUI }) {
         {/* WHITE MOUNT */}
         <div className="absolute inset-0 bg-white transition-opacity duration-300 group-hover/card:opacity-0 rounded-[20px] z-0" />
         {/* GRADIENT */}
-        {gradientEnd && gradientStart && (
-          <div
-            className={clsx(
-              "absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/card:opacity-100 rounded-[20px] z-0",
-              inView && isMobile && "opacity-100"
-            )}
-            style={{
-              background: `linear-gradient(to top right, #${gradientStart}, #${gradientEnd})`,
-            }}
-          />
-        )}
+        <div
+          className={clsx(
+            "absolute inset-0 opacity-0 transition-opacity duration-300 group-hover/card:opacity-100 rounded-[20px] z-0",
+            inView && isMobile && "opacity-100"
+          )}
+          style={{
+            background: `linear-gradient(to top right, #${
+              gradientStart ? gradientStart : "1d5ddd"
+            }, #${gradientEnd ? gradientEnd : "3da7dc"})`,
+          }}
+        />
         {/* IMAGE */}
         {image?.url && (
           <div
@@ -93,7 +93,7 @@ export function Card({ data }: { data: CardLinkUI }) {
 
             <ButtonArrow
               className={clsx(
-                "bg-primary text-white border-2 border-primary",
+                "bg-primary text-white border-2 border-primary ml-auto",
                 "group-hover/card:bg-white group-hover/card:text-primary",
                 inView && isMobile && "bg-white text-primary"
               )}

@@ -3,7 +3,7 @@ import { RichTextBlocks } from "./RichTextBlocks";
 
 export default async function RichText({ data }: { data: RichTextUI }) {
   const { rich_text, type } = data;
-  console.log(data);
+
   return (
     <div id={type} className=" bg-gray-50">
       <section className="container">

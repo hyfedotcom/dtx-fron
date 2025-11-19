@@ -1,5 +1,4 @@
 import { Button } from "@/ui/Button/Button";
-import { ContentContainer } from "@/ui/ContentContainer/ContentContainer";
 import { CtaUI } from "@types-content";
 import Image from "next/image";
 
@@ -7,7 +6,7 @@ export function Cta({ data }: { data: CtaUI }) {
   const { ctas, type, content, heading } = data;
   const sizeHeading = (heading ?? "").length;
   return (
-    <section id={data.type} className="relative py-[200px]">
+    <section id={type} className="relative py-[200px]">
       <Image
         className="z-0"
         src="/cta/bg.png"

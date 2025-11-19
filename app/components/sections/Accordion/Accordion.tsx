@@ -3,6 +3,7 @@ import { AccordionUI } from "@types-content";
 import { AccordionContainer } from "./AccordionContainer";
 
 export function Accordion({ data }: { data: AccordionUI }) {
+
   return (
     <section id={data.type} className="w-full">
       <div className="container space-y-15">
@@ -10,10 +11,11 @@ export function Accordion({ data }: { data: AccordionUI }) {
           <ContentContainer
             data={
               data.content &&
-              (data.content[1] === undefined || null)  &&
-              data.content[0].paragraph.length < 50
+              (data.content[1] === undefined || null) &&
+              data.subHeading === "" &&
+              data.content[0]?.paragraph?.length < 50
                 ? {
-                    sub_heading: data.content && data.content[0].paragraph,
+                    subHeading: data.content && data.content[0].paragraph,
                     ctas: data.ctas,
                     heading: data.heading,
                   }
@@ -23,7 +25,7 @@ export function Accordion({ data }: { data: AccordionUI }) {
             classTextContiner="flex flex-col gap-4"
           />
         </div>
-        <AccordionContainer cards={data.cards} />
+        {data.cards?.length != 0 && <AccordionContainer cards={data.cards} />}
       </div>
     </section>
   );

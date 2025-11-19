@@ -92,6 +92,7 @@ export function ILD({ card }: { card: CardUI }) {
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}
           fill
+          sizes="(min-width: 768px) 20vh, 90vh"
           className="object-cover"
         />
       </div>

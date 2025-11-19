@@ -2,6 +2,12 @@ import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const secret = searchParams.get("secret");
+
+  if (secret != process.env.REVALIDATE_SECRET_KEY) {
+    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+  }
   const body = await req.json();
   const model = body.model;
   const entry = body.entry;

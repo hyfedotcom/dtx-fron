@@ -1,7 +1,7 @@
 import { Seo } from "@types-content";
 import { mapMedia } from "../sanitize";
 
-export function mapSeo(raw: Seo) {console.log(raw.meta_image)
+export function mapSeo(raw: Seo) {
   return {
     id: raw.id,
     meta_title: raw.meta_title,

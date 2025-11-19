@@ -1,3 +1,4 @@
+import { SmartText } from "@/ui/ContentContainer/SmartText";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 
@@ -7,7 +8,10 @@ export function Card({ data }: { data: CardUI }) {
     <div className="w-full flex flex-col-reverse md:flex-row justify-between items-center gap-6">
       <div className="w-full md:w-[44%] space-y-3">
         <h3 className="h2-medium text-heading text-balance">{heading}</h3>
-        <p className="text-black text-balance">{paragraph}</p>
+        <p className="text-black text-balance">
+          {" "}
+          <SmartText text={paragraph} />
+        </p>
       </div>
       {image && (
         <div
@@ -19,6 +23,7 @@ export function Card({ data }: { data: CardUI }) {
             alt={image?.alt ?? "seo-alt"}
             fill
             className="object-cover"
+            sizes="(min-width: 768) 50vh, 100vh"
           />
         </div>
       )}

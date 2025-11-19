@@ -1,3 +1,4 @@
+import { SmartText } from "@/ui/ContentContainer/SmartText";
 import { CardUI } from "@types-ui";
 import Image from "next/image";
 
@@ -11,7 +12,10 @@ export function Card({ data, style }: { data: CardUI; style: CardStyle }) {
     >
       <div className="w-full px-5 py-10  md:px-0 md:py-0 md:w-1/2 space-y-5">
         <h3 className="h2-medium text-balance">{data.heading}</h3>
-        <p className="max-w-[600px] text-balance">{data.paragraph}</p>
+        <p className="max-w-[600px] text-balance">
+          {" "}
+          <SmartText text={data.paragraph} />
+        </p>
       </div>
       <div className="relative w-full md:w-1/2 h-[582px] overflow-hidden rounded-[20px]">
         {data.image.url && (
@@ -20,6 +24,7 @@ export function Card({ data, style }: { data: CardUI; style: CardStyle }) {
             alt={data.image.alt ?? "image"}
             fill
             className="object-cover"
+            sizes="(min-width: 768px) 50vh, 100vh"
           />
         )}
       </div>

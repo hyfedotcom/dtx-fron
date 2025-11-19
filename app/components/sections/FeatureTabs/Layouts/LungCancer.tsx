@@ -179,6 +179,7 @@ export function LungCancer({ card }: { card: CardUI }) {
           src={card.image.url}
           alt={card?.image?.alt || card.heading || "seo-image"}
           fill
+          sizes="(min-width: 768px) 20vh, 90vh"
           className="object-cover"
         />
       </div>
@@ -207,6 +208,7 @@ export function LungCancer({ card }: { card: CardUI }) {
             src="/feature-tabs/ring.png"
             alt={"vector"}
             fill
+            sizes="(min-width: 768px) 20vh, 90vh"
             className="object-cover "
           />
         </div>

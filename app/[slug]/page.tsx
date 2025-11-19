@@ -14,9 +14,6 @@ type PageProps = {
   params: Promise<Params>;
 };
 
-export const revalidate = 60; // или то, что вам нужно
-export const dynamicParams = false; // если все пути известны из CMS
-
 // 1. Кэшируем запрос к Strapi, чтобы не дёргать его дважды
 const getPageCached = cache(async (slug: string) => {
   const entry = await getPage(slug);

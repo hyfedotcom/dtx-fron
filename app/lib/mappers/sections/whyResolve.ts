@@ -4,6 +4,7 @@ import { StrapiWhyResolve, WhyResolveUI } from "@types-content";
 import { mapButtons, mapCards, mapParagraphs, txt } from "../sanitize";
 
 export function mapWhyResolve(raw: StrapiWhyResolve): WhyResolveUI {
+
   return {
     type: "feature-cards-rights",
     heading: txt(raw.heading),

@@ -96,7 +96,7 @@ export type StrapiFeatureScrollShowCase = {
 export type StrapiSolutions = {
   __component: "sections.solutions";
   heading?: string | null;
-  sub_headong?: string | null;
+  sub_heading?: string | null;
   content?: StrapiContent[] | StrapiContent | null;
   ctas?: StrapiButton[] | StrapiButton | null;
   cards: StrapiCardLink[] | StrapiCardLink | null;
