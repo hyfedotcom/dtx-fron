@@ -16,8 +16,8 @@ export function Card({
       className={`${
         isActive
           ? "bg-primary-100 space-y-2 p-4"
-          : "bg-gray-50 md:bg-transparent py-4 px-4"
-      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden hover:bg-gray-50 transform-color duration-150`}
+          : "bg-gray-50 md:bg-transparent py-4 px-4 hover:bg-gray-50"
+      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden  transform-color duration-150`}
       onClick={onClick}
     >
       <div
