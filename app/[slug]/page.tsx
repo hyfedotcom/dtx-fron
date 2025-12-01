@@ -16,6 +16,7 @@ type PageProps = {
 
 // 1. Кэшируем запрос к Strapi, чтобы не дёргать его дважды
 const getPageCached = cache(async (slug: string) => {
+  if (slug === "original-home") slug = "home";
   const entry = await getPage(slug);
   if (!entry) return null;
 
@@ -39,7 +40,8 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   try {
-    const { slug } = await params; 
+    let { slug } = await params;
+    if (slug === "original-home") slug = "home";
     const data = await getPageCached(slug);
 
     if (!data) {
@@ -71,7 +73,13 @@ export async function generateMetadata({
 
 // 4. Рендер страницы
 export default async function Page({ params }: PageProps) {
-  const { slug } = await params;
+  let { slug } = await params;
+
+  if (slug === "home") {
+    notFound();
+  }
+
+  if (slug === "original-home") slug = "home";
   const data = await getPageCached(slug);
 
   if (!data?.page) {
