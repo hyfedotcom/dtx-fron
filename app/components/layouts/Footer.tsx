@@ -19,14 +19,14 @@ export function Footer({
       <div className="container py-0! pt-[100px! pb-10! space-y-10">
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
           <div className="space-y-10">
-            <a href="#hero">
+            <Link href="/">
               <Image
                 src={logo_footer?.url || "/logos/logo.png"}
                 alt={logo_footer?.alt || "logo"}
                 width={logo_footer?.width ?? 200}
                 height={logo_footer?.height ?? 70}
               />
-            </a>
+            </Link>
 
             <div className="flex gap-5 mt-6">
               {social_media &&

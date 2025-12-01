@@ -65,7 +65,7 @@ export function Header({
         >
           {data.links.map((l, i) => (
             <Link
-              href={`/home/${l.link}`}
+              href={`${l.link}`}
               key={i}
               className={`${
                 IsTop || path === "/privacy-policy" || path === "/cookie"

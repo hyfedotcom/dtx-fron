@@ -84,7 +84,7 @@ function NavButton({ children, link }: { children: string; link: string }) {
   );
 
   return (
-    <Link className="group flex" href={`/home${link}`}>
+    <Link className="group flex" href={`${link}`}>
       <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
         {svg}
       </span>
