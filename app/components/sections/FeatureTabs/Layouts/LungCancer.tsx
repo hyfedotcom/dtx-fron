@@ -107,7 +107,7 @@ export function LungCancer({ card }: { card: CardUI }) {
     <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 w-full gap-4 relative">
       {/* FIRST BOX */}
       <div className="max-[768px]:hidden relative h-[258px] bg-white rounded-[14px] border border-gray-200 overflow-hidden">
-        <p className="body-medium  font-bold! mx-auto pt-4">
+        <p className="text-[14px] md:body-medium  font-bold! mx-auto pt-4">
           Cough Worsening During Radiotherapy
         </p>
         <svg

@@ -15,7 +15,7 @@ export function Footer({
   const { logo_footer, social_media = [] } = global;
 
   return (
-    <footer className=" bg-white w-full  z-3 relative pt-20">
+    <footer className=" bg-white w-full  z-1002 relative pt-20 ">
       <div className="container py-0! pt-[100px! pb-10! space-y-10">
         <div className="flex flex-col md:flex-row items-start justify-between gap-10">
           <div className="space-y-10">
@@ -71,7 +71,7 @@ export function Footer({
             ))}
         </div>
         <div className="w-full h-0.5 bg-gray-100"></div>
-        <div className="flex justify-between">
+        <div className="flex justify-between ">
           {copyright && <p>{copyright}</p>}
 
           {policy_links &&

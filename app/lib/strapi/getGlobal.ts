@@ -11,6 +11,8 @@ export async function getGlobal() {
     "populate[global_setting][populate][logo_footer][populate]": "*",
     "populate[global_setting][populate][logo_header][populate]": "*",
     "populate[global_setting][populate][social_media][populate]": "*",
+    "populate[global_setting][populate][navigation_between_paths][populate][nav_link]":
+      "*",
   }).toString();
 
   const json = await strapiFetch<StrapiCollection<StrapiGlobal>>(

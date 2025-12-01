@@ -46,6 +46,22 @@
     #325281 83%,
     #2e476b 100%
   );
+
+  @keyframes scroll-dynamic {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(var(--scroll-x));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.scroll-dynamic {
+  animation: scroll-dynamic var(--scroll-duration, 6s) ease-in-out infinite;
 }
 
 html {

@@ -39,7 +39,7 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   try {
-    const { slug } = await params; // ждём промис
+    const { slug } = await params; 
     const data = await getPageCached(slug);
 
     if (!data) {

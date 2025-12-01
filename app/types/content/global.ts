@@ -47,13 +47,15 @@ export type FooterUI = {
 export type StrapiGlobalSetting = {
   logo_footer: StrapiMedia | null;
   logo_header: StrapiMedia | null;
-  social_media?: StrapiSocialMedia[] 
+  social_media?: StrapiSocialMedia[];
+  navigation_between_paths?: column_links[] | null;
 };
 
 export type GlobalSetting = {
   logo_footer: MediaUI;
   logo_header: MediaUI;
   social_media: SocialMedia[];
+  navigation_between_paths: column_links[];
 };
 
 export type Target = "x" | "facebook" | "youtube" | "linkedin" | "insagram";

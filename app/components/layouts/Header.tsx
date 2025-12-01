@@ -42,7 +42,7 @@ export function Header({
         path === "/cookie"
             ? "mt-0"
           : "md: lg:pt-15"
-      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1000`}
+      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1001`}
     >
       <div
         className={`${
@@ -55,7 +55,7 @@ export function Header({
             alt="logo"
             width={logo.width}
             height={logo.height}
-            className="w-max h-[50px]"
+            className="w-max h-10 md:h-[50px]"
           />
         </Link>
         <nav

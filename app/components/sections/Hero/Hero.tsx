@@ -16,7 +16,7 @@ export function Hero({ data }: { data: HeroUI }) {
   } = data;
 
   return (
-    <main className="w-full p-0 md:p-10 bg-gray-50">
+    <main className="w-full p-0 md:p-10 bg-gray-50 z-1000 relative">
       <div
         className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url &&
@@ -125,12 +125,14 @@ export function Hero({ data }: { data: HeroUI }) {
             ></Image>
           </div>
         )}
-        {!image_mobile?.url && <div className="w-full h-[10vh]"/>}
+        {!image_mobile?.url && <div className="w-full h-[10vh]" />}
 
         {/* BG LAYOUT */}
+        <div className=" absolute inset-0 w-full h-full bg-black/20 z-1"></div>
         <div className=" absolute inset-0 w-full h-full bg-[#F9FCFF]/10 backdrop-blur-[80px] z-1"></div>
 
         {/* VIDEO */}
+
         <video
           className="absolute inset-0 w-full h-full object-cover z-0"
           src="/video/hero-dtx.mp4"

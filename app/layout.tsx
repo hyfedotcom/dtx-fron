@@ -6,6 +6,7 @@ import { Header } from "@/layouts/Header";
 import { mapGlobalSetting } from "./lib/mappers/layouts/globalSetting";
 import { Footer } from "@/layouts/Footer";
 import { mapFooter } from "./lib/mappers/layouts/mapFooter";
+import { NavBetweenPaths } from "@/sections/NavBetweenPaths/NavBetweenPaths";
 
 const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans",
@@ -36,7 +37,8 @@ export default async function RootLayout({
           data={header}
           logo={setting.logo_header}
           social_media={setting.social_media}
-        />
+        />{" "}
+        <NavBetweenPaths data={setting.navigation_between_paths} />
         {children}
         <Footer data={footer} global={setting} />
       </body>

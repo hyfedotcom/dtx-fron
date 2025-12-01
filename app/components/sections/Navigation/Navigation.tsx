@@ -56,14 +56,14 @@ export function Navigation({
 
   return (
     <div className="bg-gray-50">
-      <div className="relative flex flex-col gap-20  md:py-[150px]">
+      <div className="relative flex flex-col gap-20 py-[100px] md:py-[140px]">
         {/* <div className=" top-15 h-full w-full z-10">
           {" "}
           {/*sticky 
           <NavigationContainer data={data} />
         </div> */}
 
-        <div ref={triggerRef} className=" py-[200px] px-5">
+        <div ref={triggerRef} className=" px-5">
           <div className="sticky top-[40%] space-y-4 md:space-y-4">
             <AnimatedIcon visible={visible} />
             {heading && (
