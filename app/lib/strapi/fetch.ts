@@ -18,7 +18,7 @@ export async function strapiFetch<T>(
     headers: { Authorization: `Bearer ${TOKEN}` },
     next: {
       tags: tag ? [tag] : [],
-      revalidate: 60,
+      revalidate: false,
     },
   });
 

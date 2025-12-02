@@ -22,7 +22,7 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
         onMouseLeave={() => setIsActiv(false)}
         className={`${
           isActiv ? " bg-[#87CAE7]/40 " : "bg-[#87CAE7]/60 "
-        } fixed bottom-4 right-4 md:right-5 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7]`}
+        } fixed bottom-4 right-4 md:right-10 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7]`}
       >
         <p
           className={`
@@ -84,7 +84,7 @@ function NavButton({ children, link }: { children: string; link: string }) {
   );
 
   return (
-    <Link className="group flex" href={`${link}`}>
+    <Link className="group flex" href={`/${link}`}>
       <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
         {svg}
       </span>

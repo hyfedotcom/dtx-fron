@@ -55,8 +55,8 @@ export function Navigation({
   // motionStyles={motionStyles}
 
   return (
-    <div className="bg-gray-50">
-      <div className="relative flex flex-col gap-20 py-[100px] md:py-[140px]">
+    <div className="">
+      <div className="relative flex flex-col gap-20 pt-[100px] md:pt-[140px] ">
         {/* <div className=" top-15 h-full w-full z-10">
           {" "}
           {/*sticky 
@@ -65,12 +65,12 @@ export function Navigation({
 
         <div ref={triggerRef} className=" px-5">
           <div className="sticky top-[40%] space-y-4 md:space-y-4">
-            <AnimatedIcon visible={visible} />
+            {/* <AnimatedIcon visible={visible} /> */}
             {heading && (
               <h2>
                 <WordReveal
                   words={heading.split(" ")}
-                  className=" text-[40px] md:text-[50px] lg:text-[70px] xl:text-[80px] flex flex-wrap justify-center gap-3 perspective-[1000px] leading-tight text-heading"
+                  className=" text-[28px] md:text-[32px] xl:text-[40px] flex flex-wrap justify-center gap-2 xl:gap-3 perspective-[1000px] leading-tight text-heading"
                   isVisible={visible}
                 />
               </h2>
@@ -78,10 +78,10 @@ export function Navigation({
 
             {content &&
               content.map((p, i) => (
-                <p className="body-large" key={i}>
+                <p className="body-small md:body-large" key={i}>
                   <WordReveal
                     words={p.paragraph.split(" ")}
-                    className="text-balance flex-wrap text-center w-full mx-auto flex gap-1.5 items-center justify-center"
+                    className="text-balance flex-wrap text-center w-full mx-auto flex gap-1 xl:gap-1.5 items-center justify-center"
                     isVisible={visible}
                   />
                 </p>

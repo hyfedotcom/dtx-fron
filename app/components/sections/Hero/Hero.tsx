@@ -13,10 +13,11 @@ export function Hero({ data }: { data: HeroUI }) {
     ctas,
     heading,
     sub_heading,
+    type,
   } = data;
 
   return (
-    <main className="w-full p-0 md:p-10 bg-gray-50 z-1000 relative">
+    <main id={type} className="w-full bg-gray-50 p-0 md:p-10 z-1000 relative">
       <div
         className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url &&
@@ -84,7 +85,9 @@ export function Hero({ data }: { data: HeroUI }) {
         <div className="relative z-2 px-4">
           {sub_heading && (
             <div className="mx-auto w-max mb-10">
-              <SubHeading>{sub_heading}</SubHeading>
+              <SubHeading divClass="bg-[#F5F5F5]/40 border-white/0 shadow-classic">
+                {sub_heading}
+              </SubHeading>
             </div>
           )}
           <div className="max-w-[900px] text-center mx-auto space-y-7">
@@ -128,7 +131,7 @@ export function Hero({ data }: { data: HeroUI }) {
         {!image_mobile?.url && <div className="w-full h-[10vh]" />}
 
         {/* BG LAYOUT */}
-        <div className=" absolute inset-0 w-full h-full bg-black/20 z-1"></div>
+        <div className=" absolute inset-0 w-full h-full bg-black/30 z-1"></div>
         <div className=" absolute inset-0 w-full h-full bg-[#F9FCFF]/10 backdrop-blur-[80px] z-1"></div>
 
         {/* VIDEO */}

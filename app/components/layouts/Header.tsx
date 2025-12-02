@@ -7,7 +7,7 @@ import { MediaUI } from "@types-ui";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "@motion";
 
 export function Header({
@@ -23,6 +23,8 @@ export function Header({
   const [open, setOpen] = useState(false);
   const { width } = useViewportSize();
   const path = usePathname();
+  const headerRef = useRef<HTMLHtmlElement | null>(null);
+  const [isOnHero, setIsOnHero] = useState(true);
 
   useEffect(() => {
     const onScroll = () => {
@@ -34,13 +36,33 @@ export function Header({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    const header = headerRef.current;
+    const hero = document.getElementById("hero");
+    if (!header || !hero) return;
+
+    const headerHeight = header.offsetHeight;
+
+    const handleScroll = () => {
+      const rect = hero.getBoundingClientRect();
+
+      const isUnderHeader = rect.top <= headerHeight && rect.bottom > 0;
+      setIsOnHero(isUnderHeader);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header
+      ref={headerRef}
       className={`w-full fixed ${
         (IsTop && width > 758) ||
         path === "/privacy-policy" ||
         path === "/cookie"
-            ? "mt-0"
+          ? "mt-0"
           : "md: lg:pt-15"
       } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1001`}
     >
@@ -55,7 +77,9 @@ export function Header({
             alt="logo"
             width={logo.width}
             height={logo.height}
-            className="w-max h-10 md:h-[50px]"
+            className={`${
+              isOnHero && !open ? "logo logo-white" : "logo"
+            } w-max h-10 md:h-[50px]`}
           />
         </Link>
         <nav
@@ -83,18 +107,24 @@ export function Header({
           aria-label="Open menu of navitagion"
         >
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-transform rounded-full ${
-              open ? "rotate-45 translate-y-1.5" : ""
+            className={`block h-0.5 w-6 transition-all ${
+              isOnHero ? "bg-white" : "bg-primary-800"
+            } transition-transform rounded-full ${
+              open ? "rotate-45 translate-y-1.5 bg-primary-800!" : ""
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-opacity rounded-full ${
+            className={`block h-0.5 w-6 transition-all ${
+              isOnHero ? "bg-white" : "bg-primary-800"
+            }  transition-opacity rounded-full ${
               open ? "opacity-0" : "opacity-100"
             }`}
           />
           <span
-            className={`block h-0.5 w-6 bg-gray-800 transition-transform rounded-full ${
-              open ? "-rotate-45 -translate-y-2" : ""
+            className={`block h-0.5 w-6 transition-all ${
+              isOnHero ? "bg-white" : "bg-primary-800"
+            }  transition-transform rounded-full ${
+              open ? "-rotate-45 -translate-y-2 bg-primary-800!" : ""
             }`}
           />
         </button>
