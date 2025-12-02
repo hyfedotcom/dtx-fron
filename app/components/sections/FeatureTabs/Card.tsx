@@ -34,7 +34,7 @@ export function Card({
       }  inset-0 flex   gap-5 h-max flex-col md:flex-row`}
     >
       {/* Левая часть с текстом */}
-      <div className="w-full md:w-1/2  p-6 flex flex-col justify-center gap-4 bg-white rounded-[20px] text-left">
+      <div className="w-full md:w-1/2  p-6 md:p-8 flex flex-col justify-center gap-4 bg-gray-50/70 rounded-[20px] text-left">
         {card.heading && (
           <h3 className="h3-medium text-heading font-semibold">
             {card.heading}

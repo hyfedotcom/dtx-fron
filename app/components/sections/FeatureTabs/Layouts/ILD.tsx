@@ -56,7 +56,7 @@ export function ILD({ card }: { card: CardUI }) {
   return (
     <div className="grid max-[500px]:grid-cols-1 grid-cols-2 grid-rows-2 w-full gap-4">
       {/* FIRST BOX */}
-      <div className="relative flex flex-col justify-between bg-white rounded-[14px] border border-gray-200 overflow-hidden">
+      <div className="relative flex flex-col justify-between bg-gray-50/50 rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="body-medium  font-bold! mx-auto pt-4">
           Sleep disturbance
         </p>

@@ -47,7 +47,7 @@ export function Tabs({ cards, onClick }: Props) {
     >
       <div
         ref={containterRef}
-        className="relative inline-flex bg-white rounded-full p-2 gap-2  border  border-gray-200 "
+        className="relative inline-flex bg-gray-50 rounded-full p-2 gap-2  border  border-gray-200 "
       >
         <span
           aria-hidden

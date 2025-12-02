@@ -106,7 +106,7 @@ export function LungCancer({ card }: { card: CardUI }) {
   return (
     <div className="grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-2 w-full gap-4 relative">
       {/* FIRST BOX */}
-      <div className="max-[768px]:hidden relative h-[258px] bg-white rounded-[14px] border border-gray-200 overflow-hidden">
+      <div className="max-[768px]:hidden relative h-[258px] bg-gray-50/50 rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="text-[14px] md:body-medium  font-bold! mx-auto pt-4">
           Cough Worsening During Radiotherapy
         </p>
@@ -138,7 +138,7 @@ export function LungCancer({ card }: { card: CardUI }) {
       </div>
 
       {/* SECOND BOX */}
-      <div className="min-[768px]:absolute right-0 w-full md:w-[49%] bg-white flex  flex-col justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
+      <div className="min-[768px]:absolute right-0 w-full md:w-[49%] bg-gray-50/50 flex  flex-col justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
         <p className="body-medium flex items-center justify-center gap-2.5 text-left font-bold! pb-4 pt-1">
           {secondBox.heading} {secondBox.svgHeading}
         </p>

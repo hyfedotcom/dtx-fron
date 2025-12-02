@@ -236,7 +236,7 @@ export function Asthma({ card }: { card: CardUI }) {
     <div className="grid max-[500px]:grid-cols-1  max-[500px]:grid-rows-2 grid-rows-2 grid-cols-2 w-full gap-4 h-auto">
       {" "}
       {/* FIRST BOX */}
-      <div className="relative hidden min-[500px]:flex  flex-col justify-between bg-white rounded-[14px] border border-gray-200 overflow-hidden">
+      <div className="relative hidden min-[500px]:flex  flex-col justify-between bg-gray-50/50 rounded-[14px] border border-gray-200 overflow-hidden">
         <p className="text-[14px] md:body-medium  font-bold! mx-auto pt-4">
           Cough frequency over time
         </p>
@@ -267,7 +267,7 @@ export function Asthma({ card }: { card: CardUI }) {
         </svg>
       </div>
       {/* SECOND BOX */}
-      <div className="flex bg-white flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
+      <div className="flex bg-gray-50/50 flex-col max-h-[260px] justify-between rounded-[14px] p-3 border border-primary-400  overflow-hidden">
         <p className="text-[14px] md:body-medium text-left font-bold! pb-4 pt-1">
           Cough frequency over time
         </p>
