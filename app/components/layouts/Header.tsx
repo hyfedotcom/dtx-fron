@@ -38,21 +38,32 @@ export function Header({
 
   useEffect(() => {
     const header = headerRef.current;
-    const hero = document.getElementById("hero");
-    if (!header || !hero) return;
+    if (!header) return;
 
     const headerHeight = header.offsetHeight;
 
-    const handleScroll = () => {
-      const rect = hero.getBoundingClientRect();
+    const getIsVisible = (id: string) => {
+      const el = document.getElementById(id);
+      if (!el) return false;
 
-      const isUnderHeader = rect.top <= headerHeight && rect.bottom > 0;
-      setIsOnHero(isUnderHeader);
+      const rect = el.getBoundingClientRect();
+      return rect.top <= headerHeight && rect.bottom > 0;
     };
 
-    handleScroll();
+    const handleScroll = () => {
+      const onHero = getIsVisible("hero");
+      const onCta = getIsVisible("cta");
+
+      setIsOnHero(onHero || onCta);
+    };
+
+    handleScroll(); // сразу вычисляем при загрузке
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
@@ -64,7 +75,7 @@ export function Header({
         path === "/cookie"
           ? "mt-0"
           : "md: lg:pt-15"
-      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1001`}
+      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1003`}
     >
       <div
         className={`${
@@ -92,7 +103,7 @@ export function Header({
               href={`${l.link}`}
               key={i}
               className={`${
-                IsTop || path === "/privacy-policy" || path === "/cookie"
+                !isOnHero || path === "/privacy-policy" || path === "/cookie"
                   ? "text-black "
                   : "text-white"
               } transition-colors duration-200 hover:text-primary-400`}
