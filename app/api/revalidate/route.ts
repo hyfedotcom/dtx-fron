@@ -17,7 +17,7 @@ export async function POST(req: Request) {
   try {
     if (model === "global") {
       console.log(`🌍 Global content updated for site: global`);
-      revalidateTag(`global`);
+      revalidateTag(`global`, "max");
       return NextResponse.json({ type: "global" });
     }
 
@@ -25,7 +25,7 @@ export async function POST(req: Request) {
       const pageSlug = entry.slug;
       console.log(`Page updated ${pageSlug}`);
 
-      revalidateTag(pageSlug);
+      revalidateTag(pageSlug, "max");
       return NextResponse.json({
         type: "Page",
         slug: pageSlug,
