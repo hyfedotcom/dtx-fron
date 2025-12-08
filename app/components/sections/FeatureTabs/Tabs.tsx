@@ -39,14 +39,14 @@ export function Tabs({ cards, onClick }: Props) {
 
   return (
     <div
-      className="overflow-x-auto touch-pan-x scrollbar-hide max-[550px]:w-screen px-4 "
+      className="overflow-x-auto touch-pan-x scrollbar-hide max-[550px]:w-screen px-4 py-10"
       style={{
         WebkitOverflowScrolling: "touch",
       }}
     >
       <div
         ref={containterRef}
-        className="relative inline-flex bg-gray-50 rounded-full p-2 gap-2  border  border-gray-200 "
+        className="relative inline-flex bg-white rounded-full p-2 gap-2  border  border-gray-200 "
       >
         <span
           aria-hidden

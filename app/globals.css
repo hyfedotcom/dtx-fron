@@ -38,7 +38,8 @@
   --shadow-text: 0px 184px 52px rgba(0, 0, 0, 0),
     0px 118px 47px rgba(0, 0, 0, 0.01), 0px 66px 40px rgba(0, 0, 0, 0.05),
     0px 30px 30px rgba(0, 0, 0, 0.09), 0px 7px 16px rgba(0, 0, 0, 0.1);
-  --shadow-activ: 0px 6px 20px 0px rgba(0, 0, 0, 0.10);
+  --shadow-activ: 0px 3px 1px 0px rgba(0, 0, 0, 0.04),
+    0px 3px 8px 0px rgba(0, 0, 0, 0.12);
 
   --gradient-brand: linear-gradient(90deg, #1d5ddd 0%, #3da7dc 100%);
   --shadow-brand: radial-gradient(

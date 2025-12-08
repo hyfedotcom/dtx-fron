@@ -15,9 +15,9 @@ export function Card({
     <div
       className={`${
         isActive
-          ? "bg-primary-100 space-y-2 p-4"
+          ? "bg-primary-100 space-y-2 p-4 md:p-5 md:my-4"
           : "bg-gray-50 md:bg-transparent py-4 px-4 hover:bg-gray-50"
-      }  md:p-6 mb-4 rounded-[20px] cursor-pointer  md:space-y-0 overflow-hidden  transform-color duration-150`}
+      }  rounded-[28px] cursor-pointer  md:space-y-0 overflow-hidden  transform-color duration-150`}
       onClick={onClick}
     >
       <div
@@ -40,7 +40,7 @@ export function Card({
             ></Image>
           </div>
         )}
-        <h4 className="h4 font-medium">{card.heading}</h4>
+        <h4 className="h4 font-medium text-balance">{card.heading}</h4>
       </div>
       <div className={`${!card.icon.url ? "mb-4" : "md:ml-[72px]"} `}>
         <p

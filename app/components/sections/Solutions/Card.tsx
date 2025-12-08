@@ -53,7 +53,7 @@ export function Card({ data }: { data: CardLinkUI }) {
         {image?.url && (
           <div
             className={clsx(
-              "absolute opacity-0 scale-50 group-hover/card:opacity-100 group-hover/card:scale-100  md:translate-y-1/6 left-2  md:left-1/6 bottom-5  md:bottom-[0%] group-hover/card:bottom-[20%] duration-300",
+              "absolute opacity-0 scale-50 group-hover/card:opacity-100 group-hover/card:scale-100  md:translate-y-1/6 left-2  md:left-1/4  bottom-5  md:bottom-[0%] group-hover/card:bottom-[20%] duration-300",
               isMobile && inView && "bottom-5 opacity-100 left-0 scale-100"
             )}
           >

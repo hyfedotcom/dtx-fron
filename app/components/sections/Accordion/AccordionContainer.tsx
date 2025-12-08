@@ -10,7 +10,7 @@ export function AccordionContainer({ cards }: { cards: CardUI[] }) {
 
   return (
     <div className="flex gap-6">
-      <div className="max-[768px]:w-full min-[769px]:w-1/2">
+      <div className="max-[768px]:w-full min-[769px]:w-1/2 space-y-3 md:space-y-0">
         {cards.map((c, i) => (
           <Card
             card={c}
