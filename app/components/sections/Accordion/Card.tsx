@@ -1,5 +1,6 @@
 import { SmartText } from "@/ui/ContentContainer/SmartText";
 import { CardUI } from "@types-ui";
+import { group } from "console";
 import Image from "next/image";
 
 export function Card({
@@ -13,11 +14,11 @@ export function Card({
 }) {
   return (
     <div
-      className={`${
+      className={`group ${  
         isActive
           ? "bg-primary-100 space-y-2 p-4 md:p-5 md:my-4"
           : "bg-gray-50 md:bg-transparent py-4 px-4 hover:bg-gray-50"
-      }  rounded-[28px] cursor-pointer  md:space-y-0 overflow-hidden  transform-color duration-150`}
+      }  rounded-[28px] cursor-pointer  md:space-y-0 overflow-hidden  transform-color duration-200`}
       onClick={onClick}
     >
       <div
@@ -27,9 +28,9 @@ export function Card({
       >
         {card.icon.url && (
           <div
-            className={`${
-              isActive ? "bg-gray-50 " : "bg-gray-50 md:bg-white"
-            } w-[52px] h-[52px] rounded-full flex items-center justify-center`}
+            className={` ${ 
+              isActive ? "bg-white" : "bg-white md:bg-gray-50 group-hover:bg-white"
+            } w-[52px] h-[52px] transition-colors duration-200 rounded-full flex items-center justify-center`}
           >
             <Image
               src={card.icon.url}
