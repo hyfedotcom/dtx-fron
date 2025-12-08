@@ -23,10 +23,8 @@ export function AnimatedIcon({ visible }: { visible: boolean }) {
           <motion.path
             key={i}
             d={d}
-            // stroke нужен, чтобы pathLength вообще что-то рисовал
             stroke="#2364C4"
             strokeWidth={2}
-            // можно оставить fill, если хочешь заливку сразу
             fill="#2364C4"
             initial={{ pathLength: 0 }}
             animate={{ opacity: visible ? 1 : 0 }}

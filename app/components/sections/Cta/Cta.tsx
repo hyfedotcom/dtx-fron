@@ -16,7 +16,7 @@ export function Cta({ data }: { data: CtaUI }) {
       />
       <div className="conteiner relative z-1">
         <div className="flex items-center justify-between flex-col text-center">
-          <div className="space-y-5 md:space-y-6">
+          <div className="space-y-3 md:space-y-3">
             {heading && (
               <h2
                 className={`${

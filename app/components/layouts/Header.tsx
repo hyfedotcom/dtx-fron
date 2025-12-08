@@ -68,6 +68,7 @@ export function Header({
 
   return (
     <header
+      id="header"
       ref={headerRef}
       className={`w-full fixed ${
         (IsTop && width > 758) ||

@@ -1,7 +1,6 @@
 "use client";
 
 import { CardUI } from "@types-ui";
-import { div } from "framer-motion/client";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 type Props = {
@@ -51,7 +50,7 @@ export function Tabs({ cards, onClick }: Props) {
       >
         <span
           aria-hidden
-          className="pointer-events-none absolute inset-y-2 rounded-full bg-primary transition-[transform,width] duration-300 ease-out z-0"
+          className="pointer-events-none absolute inset-y-2 rounded-full bg-primary transition-[transform,width] duration-300 ease-out z-0 shadow-activ"
           style={{
             width: indicator.w,
             transform: `translateX(${indicator.x - 8}px)`,

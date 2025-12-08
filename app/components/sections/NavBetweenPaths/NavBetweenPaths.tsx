@@ -8,14 +8,51 @@ import { useEffect, useRef, useState } from "react";
 export function NavBetweenPaths({ data }: { data: column_links[] }) {
   const screenWidth = useViewportSize().width;
   const [isActiv, setIsActiv] = useState(true);
-  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     setIsActiv(screenWidth > 768);
   }, [screenWidth]);
 
+  useEffect(() => {
+    const nav = ref.current;
+    if (!nav) return;
+
+    const navRect = nav.getBoundingClientRect();
+
+    const getRect = (id: string) => {
+      const el = document.getElementById(id);
+
+      return el ? el.getBoundingClientRect() : null;
+    };
+
+    const handleScroll = () => {
+      const hero = getRect("hero");
+      const footer = getRect("footer");
+
+      if (!hero || !footer) return;
+      const navBottom = navRect.bottom;
+
+      const isAboveHero = hero.top < navBottom && hero.bottom > navBottom;
+      const isAboveFooter = footer.top < navBottom 
+
+      setIsVisible(!(isAboveHero || isAboveFooter));
+      console.log(!(isAboveHero || isAboveFooter));
+    };
+
+    handleScroll();
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="inset-0 absolute z-1000">
+    <div
+      className={`inset-0 absolute ${
+        !isVisible ? "opacity-0 z-1000" : "opacity-100 z-1003 "
+      } transition-all  duration-500`}
+    >
       <div
         ref={ref}
         onMouseEnter={() => setIsActiv(true)}
@@ -85,11 +122,11 @@ function NavButton({ children, link }: { children: string; link: string }) {
 
   return (
     <Link className="group flex" href={`/${link}`}>
-      <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
+      {/* <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
         {svg}
-      </span>
-      <span className="w-[164px] h-8 py-1 px-2 rounded-[40px] overflow-hidden bg-white border border-primary-500">
-        <ScrollingText>{children}</ScrollingText>
+      </span> */}
+      <span className="w-full  py-1.5 px-3.5 rounded-[40px] text-center font-medium overflow-hidden text-primary-700 bg-white hover:bg-primary-100 transition-colors border border-primary-200">
+        {children}
       </span>
     </Link>
   );

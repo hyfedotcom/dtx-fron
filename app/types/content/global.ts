@@ -34,6 +34,7 @@ export type StrapiHeader = {
 };
 
 export type HeaderUI = {
+  type: "header";
   links: LinksUI[];
   cta: ButtonUI[];
 };

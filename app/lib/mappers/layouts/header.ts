@@ -4,6 +4,7 @@ import { mapButtons, mapLinks } from "../sanitize";
 
 export function mapHeader(raw: StrapiHeader): HeaderUI {
   return {
+    type: "header",
     cta: mapButtons(raw.cta),
     links: mapLinks(raw.nav_links),
   };

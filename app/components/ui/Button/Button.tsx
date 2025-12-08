@@ -14,7 +14,7 @@ export function Button({ data }: { data: ButtonUI }) {
     type === "default" && "white"
       ? "hover:bg-primary  transition-colors duration-300"
       : "hover:bg-white   transition-colors  duration-300"
-  } group cursor-pointer w-full md:w-max inline-flex items-center gap-4 uppercase text-[16px] md:text-[20px] font-bold  overflow-hidden ${
+  } group cursor-pointer w-full md:w-max inline-flex items-center gap-4 uppercase text-[16px] md:text-[20px] font-semibold  overflow-hidden ${
     type === "default"
       ? "px-15 py-4.25 justify-center"
       : "py-2 pl-5 pr-2 justify-between"

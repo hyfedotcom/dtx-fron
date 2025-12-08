@@ -4,7 +4,7 @@ import { FeatureTabsLogic } from "./FeatureTabsLogic";
 
 export function FeatureTabs({ data }: { data: FeatureTabsUI }) {
   return (
-    <section className="">
+    <section id={data.type}>
       <div className="container h-full flex flex-col items-center justify-center text-center space-y-10">
         <ContentContainer data={data} />
 
