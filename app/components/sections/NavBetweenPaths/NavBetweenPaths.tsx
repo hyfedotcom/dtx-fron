@@ -59,14 +59,14 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
         onTouchStartCapture={() => setIsActiv(true)}
         onMouseLeave={() => setIsActiv(false)}
         className={`${
-          isActiv ? "bg-[#87CAE7]/40 md:max-w-max" : "bg-[#87CAE7]/60 max-w-[150px] md:max-w-max"
+          isActiv ? "bg-[#87CAE7]/40 md:max-w-max" : "bg-[#87CAE7]/60 max-w-[170px] md:max-w-max"
         } fixed bottom-4 right-4 md:right-10 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7] transition-all`}
       >
         <p
-          className={`text-[12px]! md:text-[16px]!
+          className={`text-[14px]! md:text-[16px]!
     ${isActiv ? "text-center pb-0" : "text-center pb-2 md:pb-3.5"}
     transition-all duration-600 
-    body-medium px-2 md:px-4 pt-2 md:pt-4 text-black font-medium!
+    body-medium  md:px-4 pt-2 md:pt-4 text-black font-medium!
   `}
         >
           {data[0].heading}

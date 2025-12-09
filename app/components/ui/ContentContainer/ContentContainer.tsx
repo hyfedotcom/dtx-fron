@@ -71,7 +71,7 @@ export function ContentContainer({
         )}
       </div>
       {ctas?.length != undefined && ctas?.length > 0 && (
-        <div className=" flex flex-wrap gap-5 mt-10">
+        <div className=" flex flex-wrap gap-5 mt-10 max-[600px]:w-full">
           {ctas.map((ele, index) => (
             <Button key={index} data={ele} />
           ))}

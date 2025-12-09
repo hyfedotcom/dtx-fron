@@ -150,6 +150,22 @@ h1 {
     0px 483px 193px rgba(0, 0, 0, 0.05), 0px 754px 211px rgba(0, 0, 0, 0.01);
 }
 
+a#arrow-bottom-white:hover {
+  color: var(--color-white);
+}
+
+a#arrow-right-white:hover {
+  color: var(--color-white);
+}
+
+a#arrow-bottom-primary:hover {
+  color: var(--color-primary);
+}
+
+a#arrow-right-primary:hover {
+  color: var(--color-primary);
+}
+
 a#arrow-right-white::after {
   content: "";
   position: absolute;

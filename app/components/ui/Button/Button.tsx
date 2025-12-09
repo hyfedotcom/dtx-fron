@@ -110,9 +110,10 @@ export function Button({ data }: { data: ButtonUI }) {
   const content = (
     <>
       <span
-        className={`z-10 group-active:${
-          color === "white" ? "text-white" : "text-primary"
-        } group-hover:${color === "white" ? "text-white" : "text-primary"}`}
+        className={` z-10 `}
+        //   className={`z-10 group-active:${
+        //   color === "white" ? "text-primary" : "text-white"
+        // } group-hover:${color === "white" ? "text-white" : "text-primary"}`}
       >
         {label}
       </span>
