@@ -76,7 +76,7 @@ export function Header({
         path === "/cookie"
           ? "mt-0"
           : "md: lg:pt-15"
-      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1003`}
+      } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1005`}
     >
       <div
         className={`${
@@ -86,7 +86,7 @@ export function Header({
         <Link href="/" className="flex items-center z-2">
           <Image
             src={logo.url}
-            alt="logo"
+            alt="logo od ResolveDtx"
             width={logo.width}
             height={logo.height}
             className={`${

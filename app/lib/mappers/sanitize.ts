@@ -41,7 +41,7 @@ export function mapMedia(v: StrapiMedia | null | undefined): MediaUI {
     url: normalizeUrl(v?.url) ?? "",
     width: v?.width ?? 0,
     height: v?.height ?? 0,
-    alt: v?.alt,
+    alt: v?.alternativeText,
   };
 }
 

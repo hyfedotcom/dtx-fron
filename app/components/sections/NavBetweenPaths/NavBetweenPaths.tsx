@@ -58,7 +58,7 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
         onMouseEnter={() => setIsActiv(true)}
         onMouseLeave={() => setIsActiv(false)}
         className={`${
-          isActiv ? " bg-[#87CAE7]/40 " : "bg-[#87CAE7]/60 "
+          isActiv ? "bg-[#87CAE7]/40 " : "bg-[#87CAE7]/60 "
         } fixed bottom-4 right-4 md:right-10 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7]`}
       >
         <p

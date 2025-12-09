@@ -206,7 +206,7 @@ export function LungCancer({ card }: { card: CardUI }) {
         <div className="relative w-full h-[145px] overflow-hidden">
           <Image
             src="/feature-tabs/ring.png"
-            alt={"vector"}
+            alt={"background vector"}
             fill
             sizes="(min-width: 768px) 20vh, 90vh"
             className="object-cover "
@@ -214,7 +214,7 @@ export function LungCancer({ card }: { card: CardUI }) {
         </div>
         <Image
           src="/feature-tabs/watch.png"
-          alt={card?.image?.alt || card.heading || "seo-image"}
+          alt="Smartwatch displaying real-time cough monitoring data"
           width={241}
           height={258}
           className="absolute -translate-x-[50%] left-1/2 -translate-y-[78%] "

@@ -17,7 +17,7 @@ export function Hero({ data }: { data: HeroUI }) {
   } = data;
 
   return (
-    <main id={type} className="w-full bg-gray-50 p-0 md:p-10 z-1000 relative">
+    <main id={type} className="w-full bg-gray-50 p-0 md:p-10 z-1003 relative">
       <div
         className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url &&
@@ -51,6 +51,7 @@ export function Hero({ data }: { data: HeroUI }) {
               alt={image_watch_desktop?.alt ?? "screens of resolve dtx app"}
               width={190}
               height={image_watch_desktop?.height}
+              priority  
               className="object-cover"
             ></Image>
           </div>
@@ -76,7 +77,7 @@ export function Hero({ data }: { data: HeroUI }) {
               alt={image_sreens_desktop?.alt ?? "screens of resolve dtx app"}
               width={840}
               height={image_sreens_desktop?.height}
-              fetchPriority="high"
+              priority
               className="object-cover"
             ></Image>
           </div>
@@ -125,6 +126,7 @@ export function Hero({ data }: { data: HeroUI }) {
               alt={image_mobile?.alt ?? "screens of resolve dtx app"}
               width={image_mobile.width}
               height={image_mobile.height}
+              priority
               className="object-cover w-full"
             ></Image>
           </div>

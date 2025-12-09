@@ -21,8 +21,10 @@ export function Button({ data }: { data: ButtonUI }) {
   } rounded-full`;
 
   const colorClasses = {
-    primary: "text-white bg-primary group-hover:text-primary",
-    white: "bg-white text-primary  group-hover:text-white",
+    primary:
+      "text-white bg-primary group-hover:text-primary group-active:text-primary",
+    white:
+      "bg-white text-primary  group-hover:text-white group-active:text-white",
   };
 
   const icon =
@@ -108,9 +110,9 @@ export function Button({ data }: { data: ButtonUI }) {
   const content = (
     <>
       <span
-        className={`z-10 group-hover:${
+        className={`z-10 group-active:${
           color === "white" ? "text-white" : "text-primary"
-        }`}
+        } group-hover:${color === "white" ? "text-white" : "text-primary"}`}
       >
         {label}
       </span>

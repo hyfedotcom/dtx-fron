@@ -25,7 +25,7 @@ export type StrapiMedia = {
   url: string;
   width: number;
   height: number;
-  alt?: string;
+  alternativeText?: string;
 };
 
 export type StrapiCard = {

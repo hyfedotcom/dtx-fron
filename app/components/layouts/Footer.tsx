@@ -22,7 +22,7 @@ export function Footer({
             <Link href="/">
               <Image
                 src={logo_footer?.url || "/logos/logo.png"}
-                alt={logo_footer?.alt || "logo"}
+                alt="logo od ResolveDtx"
                 width={logo_footer?.width ?? 200}
                 height={logo_footer?.height ?? 70}
               />
