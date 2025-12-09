@@ -35,7 +35,7 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
       const navBottom = navRect.bottom;
 
       const isAboveHero = hero.top < navBottom && hero.bottom > navBottom;
-      const isAboveFooter = footer.top < navBottom 
+      const isAboveFooter = footer.top < navBottom;
 
       setIsVisible(!(isAboveHero || isAboveFooter));
       console.log(!(isAboveHero || isAboveFooter));
@@ -56,16 +56,17 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
       <div
         ref={ref}
         onMouseEnter={() => setIsActiv(true)}
+        onTouchStartCapture={() => setIsActiv(true)}
         onMouseLeave={() => setIsActiv(false)}
         className={`${
-          isActiv ? "bg-[#87CAE7]/40 " : "bg-[#87CAE7]/60 "
-        } fixed bottom-4 right-4 md:right-10 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7]`}
+          isActiv ? "bg-[#87CAE7]/40 md:max-w-max" : "bg-[#87CAE7]/60 max-w-[150px] md:max-w-max"
+        } fixed bottom-4 right-4 md:right-10 md:bottom-5 cursor-pointer shadow-[0_0_20px_rgb(0_0_0/0.2)] backdrop-blur-2xl rounded-[20px] border border-[#87CAE7] transition-all`}
       >
         <p
-          className={`
-    ${isActiv ? "text-center pb-0" : "text-center pb-3.5"}
+          className={`text-[12px]! md:text-[16px]!
+    ${isActiv ? "text-center pb-0" : "text-center pb-2 md:pb-3.5"}
     transition-all duration-600 
-    body-medium px-4 pt-4 text-black font-medium!
+    body-medium px-2 md:px-4 pt-2 md:pt-4 text-black font-medium!
   `}
         >
           {data[0].heading}
@@ -76,10 +77,14 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
     ${isActiv ? "opacity-100 max-h-[500px]" : "opacity-0 max-h-0"}
   `}
         >
-          <div className="w-full h-px bg-[#87CAE7] my-3"></div>
-          <nav className="flex flex-col gap-3 px-4 pb-4">
+          <div className="w-full h-px bg-[#87CAE7] my-2 md:my-3"></div>
+          <nav className="flex flex-col gap-1.5 md:gap-3 px-4 pb-4">
             {data[0].nav_link?.map((e, i) => (
-              <NavButton link={e.link} key={i}>
+              <NavButton
+                link={e.link}
+                key={i}
+                onClick={() => setIsActiv(false)}
+              >
                 {e.label}
               </NavButton>
             ))}
@@ -90,7 +95,15 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
   );
 }
 
-function NavButton({ children, link }: { children: string; link: string }) {
+function NavButton({
+  children,
+  link,
+  onClick,
+}: {
+  children: string;
+  link: string;
+  onClick: () => void;
+}) {
   const svg = (
     <span className="-translate-x-[40%] group-hover:translate-x-[20%] flex gap-3 transition-all">
       <svg
@@ -121,11 +134,11 @@ function NavButton({ children, link }: { children: string; link: string }) {
   );
 
   return (
-    <Link className="group flex" href={`/${link}`}>
+    <Link className="group flex" href={`/${link}`} onClick={onClick}>
       {/* <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
         {svg}
       </span> */}
-      <span className="w-full  py-1.5 px-3.5 rounded-[40px] text-center font-medium overflow-hidden text-primary-700 bg-white hover:bg-primary-100 transition-colors border border-primary-200">
+      <span className="w-full py-1 md:py-1.5 px-2 md;px-3.5 text-[12px] md:text-[16px] rounded-[40px] text-center font-medium overflow-hidden text-primary-700 bg-white hover:bg-primary-100 transition-colors border border-primary-200">
         {children}
       </span>
     </Link>

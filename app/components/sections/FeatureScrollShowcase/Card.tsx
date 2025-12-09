@@ -7,10 +7,10 @@ type CardStyle = { backgroundColor: string };
 export function Card({ data, style }: { data: CardUI; style: CardStyle }) {
   return (
     <div
-      className="sticky top-40 gap-4 flex flex-col md:flex-row items-center justify-between h-auto md:h-[582px] rounded-[20px] md:pl-10"
+      className="sticky top-10 md:top-40 gap-4 flex flex-col md:flex-row items-center justify-between h-auto md:h-[582px] rounded-[20px] md:pl-10"
       style={style}
     >
-      <div className="w-full px-5 py-10  md:px-0 md:py-0 md:w-1/2 space-y-5">
+      <div className="w-full px-5 pt-10 pb-5 md:px-0 md:py-0 md:w-1/2 space-y-5">
         <h3 className="h2-medium text-balance">{data.heading}</h3>
         <p className="max-w-[600px] text-balance">
           {" "}
