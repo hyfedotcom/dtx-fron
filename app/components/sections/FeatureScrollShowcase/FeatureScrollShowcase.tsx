@@ -21,7 +21,7 @@ export function FeatureScrollShowcase({
       <div className="container px-0! md:px-10 space-y-10 md:space-y-15">
         <ContentContainer
           data={data}
-          classContainer="flex flex-col items-center justify-between text-center "
+          classContainer="flex flex-col items-center justify-between text-center px-4 md:px-10"
           classParagraph="max-w-[1000px] body-large font-medium"
         />
         <div className="space-y-10">

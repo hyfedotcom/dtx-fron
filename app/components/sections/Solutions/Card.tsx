@@ -72,7 +72,7 @@ export function Card({ data }: { data: CardLinkUI }) {
           {heading && (
             <h3
               className={clsx(
-                "h3-medium transition-colors duration-300 group-hover/card:text-white",
+                "h3-medium transition-all duration-300 group-hover/card:text-white font-normal! group-hover/card:font-medium!",
                 inView && isMobile && "text-white"
               )}
             >

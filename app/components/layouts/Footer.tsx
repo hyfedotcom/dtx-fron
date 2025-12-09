@@ -17,8 +17,8 @@ export function Footer({
   return (
     <footer id="footer" className=" bg-white w-full  z-1002 relative pt-20 ">
       <div className="container py-0! pt-[100px! pb-10! space-y-10">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-10">
-          <div className="space-y-10">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-15 md:gap-10">
+          <div className=" md:space-y-10">
             <Link href="/">
               <Image
                 src={logo_footer?.url || "/logos/logo.png"}
@@ -28,7 +28,7 @@ export function Footer({
               />
             </Link>
 
-            <div className="flex gap-5 mt-6">
+            <div className="flex gap-4 mt-6">
               {social_media &&
                 social_media.length > 0 &&
                 social_media.map((media, index) => (
@@ -40,10 +40,10 @@ export function Footer({
             column_links.length > 0 &&
             column_links.map((column, idx) => (
               <div key={idx}>
-                <p className="mb-6 text-[14px]! font-medium uppercase text-gray-600">
+                <p className="mb-5 md:mb-6 text-[14px]! font-medium uppercase text-gray-500">
                   {column.heading}
                 </p>
-                <ul className="space-y-3">
+                <ul className="space-y-2 md:space-y-3">
                   {column.nav_link?.map((l, i) => {
                     const isExternal = getLinkKind(l.link);
 
@@ -70,7 +70,7 @@ export function Footer({
               </div>
             ))}
         </div>
-        <div className="w-full h-0.5 bg-gray-100"></div>
+        <div className="w-full h-0.5 bg-gray-100/50"></div>
         <div className="flex justify-between ">
           {copyright && <p>{copyright}</p>}
 

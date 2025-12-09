@@ -180,6 +180,7 @@ export function Header({
                   <a
                     key={i}
                     href={c.link}
+                    target="_blank"
                     className=" mt-5 bg-primary text-white px-8 py-3 rounded-full font-semibold hover:opacity-85 transition"
                   >
                     {c.label}
@@ -187,7 +188,7 @@ export function Header({
                 ))}
 
                 {social_media && social_media.length > 0 && (
-                  <div className="flex gap-5 mt-auto">
+                  <div className="flex gap-4 mt-auto">
                     {social_media.map((media, index) => (
                       <SocialMediaRender data={media} key={index} />
                     ))}
