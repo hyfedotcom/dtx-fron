@@ -37,7 +37,7 @@ export default async function RootLayout({
           data={header}
           logo={setting.logo_header}
           social_media={setting.social_media}
-        />{" "}
+        />
         <NavBetweenPaths data={setting.navigation_between_paths} />
         {children}
         <Footer data={footer} global={setting} />

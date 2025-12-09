@@ -105,9 +105,9 @@ export function Header({
               key={i}
               className={`${
                 !isOnHero || path === "/privacy-policy" || path === "/cookie"
-                  ? "text-black "
-                  : "text-white"
-              } transition-colors duration-200 hover:text-primary-400`}
+                  ? "text-black hover:text-primary-600"
+                  : "text-white hover:text-primary-800"
+              } transition-colors duration-200 `}
             >
               {l.label}
             </Link>
@@ -144,6 +144,7 @@ export function Header({
         {data.cta.map((b, i) => (
           <a
             href={b.link}
+            target="_blank"
             className={`hidden lg:block bg-${b.color} hover:opacity-80 px-5 py-3 rounded-full text-white font-semibold leading-[26px] text-[18px]`}
             key={i}
           >
