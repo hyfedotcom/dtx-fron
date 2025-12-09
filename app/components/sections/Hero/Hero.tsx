@@ -76,6 +76,7 @@ export function Hero({ data }: { data: HeroUI }) {
               alt={image_sreens_desktop?.alt ?? "screens of resolve dtx app"}
               width={840}
               height={image_sreens_desktop?.height}
+              fetchPriority="high"
               className="object-cover"
             ></Image>
           </div>

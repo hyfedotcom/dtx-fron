@@ -23,7 +23,7 @@ export function Card({ data }: { data: CardUI }) {
             alt={image?.alt ?? "seo-alt"}
             fill
             className="object-cover"
-            sizes="(min-width: 768) 50vh, 100vh"
+            sizes="(min-width: 768) 35vh, 100vh"
           />
         </div>
       )}
