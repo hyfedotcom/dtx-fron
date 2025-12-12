@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: "http://localhost:3000",
+  siteUrl: "https://www.resolvedtx.com/",
   generateRobotsTxt: true,
   sitemapSize: 5000,
 };
