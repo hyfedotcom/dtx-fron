@@ -3,4 +3,5 @@ module.exports = {
   siteUrl: "https://www.resolvedtx.com/",
   generateRobotsTxt: true,
   sitemapSize: 5000,
+  exclude: ["/home"],
 };

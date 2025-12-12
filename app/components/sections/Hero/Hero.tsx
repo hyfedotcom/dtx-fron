@@ -17,7 +17,7 @@ export function Hero({ data }: { data: HeroUI }) {
   } = data;
 
   return (
-    <main id={type} className="w-full bg-gray-50 p-0 md:p-10 z-1003 relative">
+    <main id={type} className="w-full bg-gray-50 p-0 lg:p-10 z-1003 relative">
       <div
         className={` pt-35 lg:pt-48 relative ${
           image_sreens_desktop?.url &&

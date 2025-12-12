@@ -57,14 +57,14 @@ export function Header({
       setIsOnHero(onHero || onCta);
     };
 
-    handleScroll(); // сразу вычисляем при загрузке
+    handleScroll();
 
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [path]);
 
   return (
     <header
@@ -75,12 +75,12 @@ export function Header({
         path === "/privacy-policy" ||
         path === "/cookie"
           ? "mt-0"
-          : "md: lg:pt-15"
+          : "lg:pt-15"
       } duration-500 md:pl-15 ${open ? "" : "pr-3 pl-3 pt-3"} md:pr-15 z-1005`}
     >
       <div
         className={`${
-          IsTop ? "  max-w-[1440px] " : " max-w-full"
+          IsTop ? " max-w-[1440px] " : " max-w-full"
         } flex bg-[#87CAE7]/20 border-[#87CAE7]  justify-between items-center p-3 mx-auto  transition-all duration-500 backdrop-blur-[20px] rounded-t-[40px] rounded-b-[40px]`}
       >
         <Link href="/" className="flex items-center z-2">
@@ -95,7 +95,7 @@ export function Header({
           />
         </Link>
         <nav
-          className={`hidden lg:flex ${
+          className={`hidden min-[1120px]:flex ${
             IsTop ? "gap-5" : "gap-10"
           } font-semibold items-center transition-all duration-500`}
         >
@@ -114,7 +114,7 @@ export function Header({
           ))}
         </nav>
         <button
-          className="lg:hidden relative z-2 pr-2 w-auto h-4 flex flex-col justify-between items-center"
+          className=" min-[1120px]:hidden relative z-2 pr-2 w-auto h-4 flex flex-col justify-between items-center"
           onClick={() => setOpen(!open)}
           aria-label="Open menu of navitagion"
         >
@@ -145,7 +145,7 @@ export function Header({
           <a
             href={b.link}
             target="_blank"
-            className={`hidden lg:block bg-${b.color} hover:opacity-80 px-5 py-3 rounded-full text-white font-semibold leading-[26px] text-[18px]`}
+            className={`hidden min-[1120px]:block bg-${b.color} hover:opacity-80 px-5 py-3 rounded-full text-white font-semibold leading-[26px] text-[18px]`}
             key={i}
           >
             {b.label}

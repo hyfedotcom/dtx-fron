@@ -5,7 +5,7 @@ import { motion } from "@motion";
 
 export default function NotFound() {
   return (
-    <main className="flex h-screen flex-col items-center justify-center bg-gray-50 text-neutral-50 px-6 text-center">
+    <main className="flex h-screen flex-col items-center justify-center bg-gray-50 text-neutral-50 px-6 text-center z-1004 relative">
       <motion.h1
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
