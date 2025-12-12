@@ -9,7 +9,7 @@ export function Cta({ data }: { data: CtaUI }) {
     <section id={type} className="relative py-[200px]">
       <Image
         className="z-0"
-        src="/cta/bg.png"
+        src="/cta/bg.webp"
         alt="background image"
         fill
         sizes="100vh"

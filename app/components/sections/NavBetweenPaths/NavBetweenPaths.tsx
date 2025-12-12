@@ -38,7 +38,6 @@ export function NavBetweenPaths({ data }: { data: column_links[] }) {
       const isAboveFooter = footer.top < navBottom;
 
       setIsVisible(!(isAboveHero || isAboveFooter));
-      console.log(!(isAboveHero || isAboveFooter));
     };
 
     handleScroll();
