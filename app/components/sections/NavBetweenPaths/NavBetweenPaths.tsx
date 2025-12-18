@@ -109,40 +109,11 @@ function NavButton({
   link: string;
   onClick: () => void;
 }) {
-  const svg = (
-    <span className="-translate-x-[40%] group-hover:translate-x-[20%] flex gap-3 transition-all">
-      <svg
-        width="21"
-        height="12"
-        viewBox="0 0 21 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M20.5303 4.99311C20.8232 5.286 20.8232 5.76087 20.5303 6.05377L15.7574 10.8267C15.4645 11.1196 14.9896 11.1196 14.6967 10.8267C14.4038 10.5338 14.4038 10.059 14.6967 9.76608L18.9393 5.52344L14.6967 1.2808C14.4038 0.987903 14.4038 0.51303 14.6967 0.220136C14.9896 -0.0727569 15.4645 -0.072757 15.7574 0.220136L20.5303 4.99311ZM20 5.52344L20 6.27344L8.88509e-09 6.27344L0 5.52344L-8.88509e-09 4.77344L20 4.77344L20 5.52344Z"
-          fill="#2E7BE0"
-        />
-      </svg>
-      <svg
-        width="21"
-        height="12"
-        viewBox="0 0 21 12"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M20.5303 4.99311C20.8232 5.286 20.8232 5.76087 20.5303 6.05377L15.7574 10.8267C15.4645 11.1196 14.9896 11.1196 14.6967 10.8267C14.4038 10.5338 14.4038 10.059 14.6967 9.76608L18.9393 5.52344L14.6967 1.2808C14.4038 0.987903 14.4038 0.51303 14.6967 0.220136C14.9896 -0.0727569 15.4645 -0.072757 15.7574 0.220136L20.5303 4.99311ZM20 5.52344L20 6.27344L8.88509e-09 6.27344L0 5.52344L-8.88509e-09 4.77344L20 4.77344L20 5.52344Z"
-          fill="#FEFEFE"
-        />
-      </svg>
-    </span>
-  );
+  const isMobile = useViewportSize().width < 768;
+  const onClickFun = isMobile ? onClick : undefined;
 
   return (
-    <Link className="group flex" href={`/${link}`} onClick={onClick}>
-      {/* <span className="w-11 h-8 overflow-hidden flex items-center rounded-[40px] group-hover:bg-white bg-primary-500 border border-white/0 group-hover:border-primary-500 ">
-        {svg}
-      </span> */}
+    <Link className="group flex" href={`/${link}`} onClick={onClickFun}>
       <span
         className={`w-full py-1.5 md:py-1.5 px-3 md;px-3.5 text-[14px] md:text-[16px] rounded-[40px] text-center font-medium overflow-hidden text-primary-700 bg-white hover:bg-primary-100 transition-colors border border-primary-200`}
       >
